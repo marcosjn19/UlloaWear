@@ -1,14 +1,14 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import Cuenta
+from .models import Cuenta, PerfilUsuario
 from django.utils.html import format_html
 
 # Register your models here.
 class CuentasAdmin(UserAdmin):
-    list_display = ('email', 'nombre', 'apellido', 'usuario', 'ultimo_acceso', 'fecha_registro', 'activo')
+    list_display = ('email', 'nombre', 'apellido', 'usuario', 'ultimo_acceso', 'fecha_registro', 'is_active')
     list_display_links = ('email', 'nombre', 'apellido')
     readonly_fields = ('ultimo_acceso', 'fecha_registro')
-    ordering = ('fecha_registro')
+    ordering = ('fecha_registro',)
     filter_horizontal = ()
     list_filter = ()
     fieldsets = ()
@@ -24,5 +24,5 @@ class PerfilUsuarioAdmin(admin.ModelAdmin):
 
 # Registro en el panel de administración
 
-# admin.site.register(Cuenta, PerfilUsuarioAdmin)
-# admin.site.register(Cuenta, CuentasAdmin)
+admin.site.register(PerfilUsuario, PerfilUsuarioAdmin)
+admin.site.register(Cuenta, CuentasAdmin)

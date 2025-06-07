@@ -134,3 +134,6 @@ STATICFILES_DIR = [BASE_DIR / "static"] # Documentación Telegram - Static
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'cuentas.Cuenta'
+
+MEDIA_URL = '/imagenes/'
+MEDIA_ROOT = BASE_DIR / 'imagenes'
