@@ -1,8 +1,10 @@
 from django.urls import path # type: ignore
+
 from . import views
 
 urlpatterns = [
     path('', views.home, name='inicio'),
+    path('producto/<int:pk>/', views.detalles_producto, name='detalle_producto'),
 ]
 
 # urlpatterns = [

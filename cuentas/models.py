@@ -3,36 +3,42 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 # Create your models here.
 class AdministradorCuentas(BaseUserManager):
-    def crear_usuario(self, nombre, apellido, nombre_usuario, email, password=None):
+    def create_user(self, nombre, apellido, usuario, email, password=None):
+        return self.crear_usuario(nombre, apellido, usuario, email, password)
+    
+    def create_superuser(self, nombre, apellido, email, usuario, password):
+        return self.crear_superusuario(nombre, apellido, email, usuario, password)
+    
+    def crear_usuario(self, nombre, apellido, usuario, email, password=None):
         if not email:
             raise ValueError('El usuario debe tener un correo electrónico.')
-        if not nombre_usuario:
+        if not usuario:
             raise ValueError('El usuario debe tener un nombre de usuario.')
 
-        usuario = self.model(
+        user = self.model(
             email=self.normalize_email(email),
-            nombre_usuario=nombre_usuario,
+            usuario=usuario,
             nombre=nombre,
             apellido=apellido,
         )
-        usuario.set_password(password)
-        usuario.save(using=self._db)
-        return usuario
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
 
-    def crear_superusuario(self, nombre, apellido, email, nombre_usuario, password):
-        usuario = self.crear_usuario(
+    def crear_superusuario(self, nombre, apellido, email, usuario, password):
+        user = self.crear_usuario(
             email=self.normalize_email(email),
-            nombre_usuario=nombre_usuario,
+            usuario=usuario,
             password=password,
             nombre=nombre,
             apellido=apellido,
         )
-        usuario.is_admin = True
-        usuario.is_active = True
-        usuario.is_staff = True
-        usuario.is_superadmin = True
-        usuario.save(using=self._db)
-        return usuario
+        user.is_admin = True
+        user.is_active = True
+        user.is_staff = True
+        user.is_superadmin = True
+        user.save(using=self._db)
+        return user
     
 class Cuenta(AbstractBaseUser):
     nombre = models.CharField(max_length=50)
