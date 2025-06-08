@@ -13,5 +13,5 @@ urlpatterns = [
     # path('activar-cuenta/<uidb64>/<token>/', views.activate, name='activar_cuenta'),
 
     # path('mis-ordenes/', views.my_orders, name='mis_ordenes'),
-    # path('editar-perfil/', views.edit_profile, name='editar_perfil'),
+    path('editar-perfil/', views.editar_perfil, name='editar_perfil'),
 ]

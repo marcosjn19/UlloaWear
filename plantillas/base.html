@@ -46,7 +46,7 @@
                 <div class="hidden xl:flex items-center space-x-1 text-sm">
                     <i data-feather="user" class="w-4 h-4"></i>
                     <span>Asesores</span>
-                    <span>800&nbsp;123&nbsp;4567</span>
+                    <span>871&nbsp;123&nbsp;4567</span>
                     <i data-feather="chevron-down" class="w-4 h-4"></i>
                 </div>
 
@@ -96,8 +96,10 @@
                             </div>
                             <ul class="grid grid-cols-3 text-center text-xs">
                                 <li class="p-4 hover:bg-gray-50">
-                                    <i data-feather="user" class="mx-auto mb-1 w-6 h-6"></i>
-                                    <span class="block">Mi perfil</span>
+                                    <a href="{% url 'editar_perfil' %}" class="flex flex-col items-center text-xs">
+                                        <i data-feather="user" class="mx-auto mb-1 w-6 h-6"></i>
+                                        <span class="block">Mi perfil</span>
+                                    </a>
                                 </li>
                                 <li class="p-4 hover:bg-gray-50">
                                     <i data-feather="truck" class="mx-auto mb-1 w-6 h-6"></i>

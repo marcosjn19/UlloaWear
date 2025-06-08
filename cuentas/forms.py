@@ -71,3 +71,16 @@ class FormularioPerfilUsuario(forms.ModelForm):
         super(FormularioPerfilUsuario, self).__init__(*args, **kwargs)
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = 'form-control'
+            
+class FormularioEditarPerfil(forms.ModelForm):
+    class Meta:
+        model = Cuenta
+        fields = ('nombre', 'apellido')
+
+    def __init__(self, *args, **kwargs):
+        super(FormularioEditarPerfil, self).__init__(*args, **kwargs)
+        # Aplica estilos Tailwind a cada campo
+        for field in self.fields.values():
+            field.widget.attrs.update({
+                'class': 'w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500',
+            })

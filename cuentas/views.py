@@ -1,7 +1,8 @@
 # cuentas/views.py
 from django.shortcuts import render, redirect # type: ignore
 from django.contrib import messages, auth # type: ignore
-from .forms import FormularioRegistro
+from django.contrib.auth.decorators import login_required # type: ignore
+from .forms import FormularioRegistro, FormularioEditarPerfil
 
 # ---------- REGISTRO ----------
 def register(request):
@@ -36,3 +37,15 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect("inicio")
+
+@login_required
+def editar_perfil(request):
+    if request.method == 'POST':
+        form = FormularioEditarPerfil(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Perfil actualizado correctamente.")
+            return redirect('inicio')
+    else:
+        form = FormularioEditarPerfil(instance=request.user)
+    return render(request, "cuentas/editar_perfil.html", {"form": form})
