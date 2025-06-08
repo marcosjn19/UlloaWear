@@ -1,6 +1,8 @@
 # cuentas/forms.py
 from django import forms # type: ignore
 from django.contrib.auth.forms import SetPasswordForm # type: ignore
+from django.contrib.auth.forms import PasswordResetForm # type: ignore
+from django.core.exceptions import ValidationError # type: ignore
 from .models import Cuenta, PerfilUsuario
 
 # --- 1. clases Tailwind comunes ---
@@ -45,6 +47,11 @@ class FormularioRegistro(forms.ModelForm):
                 field.widget.attrs["placeholder"] = placeholders[name]
             # clases Tailwind
             field.widget.attrs["class"] = INPUT_TAILWIND
+    def clean_email(self):
+        email = self.cleaned_data.get("email", "").strip().lower()
+        if Cuenta.objects.filter(email__iexact=email).exists():
+            raise forms.ValidationError("Ya existe una cuenta con ese correo.")
+        return email
 
     def clean_usuario(self):
         usuario = self.cleaned_data.get("usuario", "").strip()
@@ -116,3 +123,23 @@ class FormularioCambioContraseña(SetPasswordForm):
                 "placeholder": "••••••••",
                 "autocomplete": "new-password",
             })
+            
+class FormularioPasswordReset(PasswordResetForm):
+    """
+    Sólo enviará el correo si el e-mail existe en nuestra tabla Cuenta,
+    y aplica nuestros estilos Tailwind al campo.
+    """
+    email = forms.EmailField(
+        max_length=254,
+        widget=forms.EmailInput(attrs={
+            'class': INPUT_TAILWIND,
+            'placeholder': 'usuario@correo.com',
+            'autocomplete': 'email',
+        })
+    )
+
+    def clean_email(self):
+        email = self.cleaned_data.get("email", "").strip().lower()
+        if not Cuenta.objects.filter(email__iexact=email).exists():
+            raise ValidationError("No hemos encontrado ninguna cuenta con ese correo.")
+        return email

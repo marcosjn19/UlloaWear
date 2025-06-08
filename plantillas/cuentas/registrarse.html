@@ -26,6 +26,9 @@
             <div>
                 {{ form.email.label_tag }}
                 {{ form.email }}
+                {% for err in form.email.errors %}
+                <p class="text-red-600 text-sm mt-1">{{ err }}</p>
+                {% endfor %}
             </div>
             <div>
                 {{ form.usuario.label_tag }}
