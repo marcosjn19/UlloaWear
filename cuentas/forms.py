@@ -1,4 +1,5 @@
-from django import forms
+# cuentas/forms.py
+from django import forms # type: ignore
 from models import Cuenta, PerfilUsuario
 
 class FormularioRegistro(forms.ModelForm):

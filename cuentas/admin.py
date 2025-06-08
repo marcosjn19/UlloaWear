@@ -1,7 +1,8 @@
-from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
+# cuentas/admin.py
+from django.contrib import admin # type: ignore
+from django.contrib.auth.admin import UserAdmin # type: ignore
 from .models import Cuenta, PerfilUsuario
-from django.utils.html import format_html
+from django.utils.html import format_html # type: ignore
 
 # Register your models here.
 class CuentasAdmin(UserAdmin):
