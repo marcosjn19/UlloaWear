@@ -1,3 +1,4 @@
-from django.shortcuts import render
+# cuentas/views.py
+from django.shortcuts import render # type: ignore
 
 # Create your views here.
