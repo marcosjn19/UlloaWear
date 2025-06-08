@@ -5,41 +5,62 @@
 
 {% block content %}
 <div class="max-w-md mx-auto py-12">
-    <h1 class="text-2xl font-semibold text-center mb-8">Iniciar sesión</h1>
-    <form method="post" class="space-y-6">
+    <h1 class="text-3xl font-semibold text-center mb-8">Iniciar sesión</h1>
+
+    <form method="post" class="space-y-6 bg-white p-8 rounded-lg shadow-md">
         {% csrf_token %}
         {% if messages %}
-        {% for message in messages %}
-        <p class="text-red-600 text-sm text-center">{{ message }}</p>
-        {% endfor %}
+        <ul class="space-y-2">
+            {% for message in messages %}
+            <li class="text-red-600 text-sm">{{ message }}</li>
+            {% endfor %}
+        </ul>
         {% endif %}
-        <div class="grid gap-4">
-            <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-            <input id="email" name="email" type="email" required class="form-control border rounded w-full py-2 px-3">
-            <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
-            <input id="password" name="password" type="password" required
-                class="form-control border rounded w-full py-2 px-3">
+
+        <div class="space-y-4">
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+                <input id="email" name="email" type="email" required
+                    class="mt-1 w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    placeholder="tu@correo.com">
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                <input id="password" name="password" type="password" required
+                    class="mt-1 w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    placeholder="••••••••">
+            </div>
         </div>
+
         <button type="submit"
             class="w-full py-3 bg-indigo-600 text-white rounded font-medium hover:bg-indigo-700 transition">
             Entrar
         </button>
+
+        <div class="text-center">
+            <a href="{% url 'password_reset' %}" class="text-indigo-600 hover:underline text-sm">
+                ¿Olvidaste tu contraseña?
+            </a>
+        </div>
     </form>
-    <p class="text-center text-sm mt-6">
+
+    <div class="mt-8 space-y-4">
         <!-- GitHub -->
         <a href="{% url 'social:begin' 'github' %}"
-            class="flex items-center justify-center w-full py-3 border rounded-xl gap-2 hover:bg-gray-50 transition">
+            class="flex items-center justify-center w-full py-3 border border-gray-300 rounded-xl gap-2 hover:bg-gray-50 transition">
             <i data-feather="github" class="h-5 w-5"></i>
-            <span>Continuar con GitHub</span>
+            <span class="font-medium">Continuar con GitHub</span>
         </a>
 
         <!-- Discord -->
         <a href="{% url 'social:begin' 'discord' %}"
-            class="flex items-center justify-center w-full py-3 border rounded-xl gap-2 mt-3 hover:bg-gray-50 transition">
-            <img src="{% static 'images/discord.svg' %}" class="h-5" alt="">
-            <span>Continuar con Discord</span>
+            class="flex items-center justify-center w-full py-3 border border-gray-300 rounded-xl gap-2 hover:bg-gray-50 transition">
+            <img src="{% static 'images/discord.svg' %}" class="h-5" alt="Discord">
+            <span class="font-medium">Continuar con Discord</span>
         </a>
+    </div>
 
+    <p class="text-center text-sm text-gray-600 mt-6">
         ¿Aún no tienes cuenta?
         <a href="{% url 'registrarse' %}" class="text-indigo-600 hover:underline">Crear cuenta</a>
     </p>

@@ -1,6 +1,6 @@
 from pathlib import Path
 import os
-from dotenv import load_dotenv   # solo si usas python-dotenv localmente (opcional)
+from dotenv import load_dotenv # type: ignore
 
 # Carga el .env cuando trabajas fuera de Docker
 load_dotenv()
@@ -181,3 +181,15 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
+
+# Para desarrollo (añádelo abajo de MEDIA_ROOT)
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# En producción usarías algo así:
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST      = os.getenv("EMAIL_HOST")
+EMAIL_PORT      = int(os.getenv("EMAIL_PORT", 587))
+EMAIL_USE_TLS   = True
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL  = os.getenv("DEFAULT_FROM_EMAIL")

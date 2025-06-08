@@ -1,5 +1,6 @@
 # cuentas/forms.py
 from django import forms # type: ignore
+from django.contrib.auth.forms import SetPasswordForm # type: ignore
 from .models import Cuenta, PerfilUsuario
 
 # --- 1. clases Tailwind comunes ---
@@ -11,14 +12,21 @@ INPUT_TAILWIND = (
 
 
 class FormularioRegistro(forms.ModelForm):
-    contraseña = forms.CharField(widget=forms.PasswordInput)
-    confirmar_contraseña = forms.CharField(widget=forms.PasswordInput)
+    usuario = forms.CharField(
+        max_length=50,
+        widget=forms.TextInput
+    )
+    contraseña = forms.CharField(
+        widget=forms.PasswordInput
+    )
+    confirmar_contraseña = forms.CharField(
+        widget=forms.PasswordInput
+    )
 
     class Meta:
         model = Cuenta
-        fields = ["nombre", "apellido", "telefono", "email", "contraseña"]
+        fields = ["nombre", "apellido", "telefono", "email", "usuario", "contraseña"]
 
-    # --- 2. inyección de atributos ---
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -27,6 +35,7 @@ class FormularioRegistro(forms.ModelForm):
             "apellido": "Apellidos",
             "telefono": "10 dígitos",
             "email": "usuario@correo.com",
+            "usuario": "Elige un nombre de usuario",
             "contraseña": "••••••••",
             "confirmar_contraseña": "Repite la contraseña",
         }
@@ -38,11 +47,19 @@ class FormularioRegistro(forms.ModelForm):
             # clases Tailwind
             field.widget.attrs["class"] = INPUT_TAILWIND
 
-    # --- 3. validación de contraseñas ---
+    def clean_usuario(self):
+        usuario = self.cleaned_data.get("usuario", "").strip()
+        if Cuenta.objects.filter(usuario__iexact=usuario).exists():
+            raise forms.ValidationError("Este nombre de usuario ya está en uso.")
+        return usuario
+
     def clean(self):
         cleaned = super().clean()
-        if cleaned.get("contraseña") != cleaned.get("confirmar_contraseña"):
+        pwd = cleaned.get("contraseña")
+        pwd2 = cleaned.get("confirmar_contraseña")
+        if pwd and pwd2 and pwd != pwd2:
             raise forms.ValidationError("¡Las contraseñas no coinciden!")
+        return cleaned
 
 
 class FormularioUsuario(forms.ModelForm):
@@ -83,4 +100,20 @@ class FormularioEditarPerfil(forms.ModelForm):
         for field in self.fields.values():
             field.widget.attrs.update({
                 'class': 'w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500',
+            })
+            
+class FormularioCambioContraseña(SetPasswordForm):
+    """
+    Este formulario se usará en PasswordResetConfirmView 
+    para añadir clases Tailwind a los inputs.
+    """
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Actualiza attrs de cada campo
+        for field_name in ("new_password1", "new_password2"):
+            field = self.fields[field_name]
+            field.widget.attrs.update({
+                "class": INPUT_TAILWIND,
+                "placeholder": "••••••••",
+                "autocomplete": "new-password",
             })
