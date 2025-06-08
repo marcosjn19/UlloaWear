@@ -1,21 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Pantalla de un producto</h1>
-    <h2>{{ producto.nombre }}</h2>
-    <p>{{ producto.descripcion }}</p>
+{% extends 'base.html' %}
+{% block content %}
 
-    {% if producto.imagenes %}
-        <img src="{{ producto.imagenes.url }}" alt="Imagen de {{ producto.nombre }}" width="300">
-    {% else %}
-        <p>Este producto no tiene imagen.</p>
-    {% endif %}
+<section class="py-12 bg-gray-100">
+  <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
 
-    <h2>${{producto.precio}}</h2>
-</body>
-</html>
+    <!-- Producto -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+      <!-- Imagen -->
+      <div class="flex justify-center items-center">
+        {% if producto.imagenes %}
+          <img src="{{ producto.imagenes.url }}" alt="Imagen de {{ producto.nombre }}" class="rounded-xl object-cover max-h-[400px] shadow-md">
+        {% else %}
+          <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 italic rounded-xl">Sin imagen</div>
+        {% endif %}
+      </div>
+
+      <!-- Detalles -->
+      <div>
+        <h1 class="text-4xl font-semibold text-gray-900">{{ producto.nombre }}</h1>
+        <p class="mt-4 text-gray-600 text-lg leading-relaxed">{{ producto.descripcion }}</p>
+
+        <p class="mt-6 text-2xl font-bold text-blue-600">${{ producto.precio }}</p>
+
+        {% with avg=producto.averageReview count=producto.countReview %}
+          <div class="mt-4 flex items-center gap-2 text-yellow-500 text-sm">
+            {% for i in rango_5 %}
+                {% if i <= producto.averageReview %}
+                    <span>★</span>
+                {% else %}
+                    <span class="text-gray-300">★</span>
+                {% endif %}
+            {% endfor %}
+            <span class="text-gray-600 ml-2 text-sm">({{ count }} reseñas)</span>
+          </div>
+        {% endwith %}
+      </div>
+    </div>
+
+    <!-- Reseñas -->
+    <div class="border-t border-gray-200 px-8 py-6">
+      <h2 class="text-2xl font-medium text-gray-800 mb-4">Opiniones de Clientes</h2>
+
+      {% if reviews %}
+        <div class="grid gap-6">
+          {% for review in reviews %}
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-700">{{ review.titulo }}</h3>
+                <div class="text-yellow-500 text-sm">
+                    {% for i in rango_5 %}
+                        {% if i <= review.calificacion %}
+                            <span>★</span>
+                        {% else %}
+                            <span class="text-gray-300">★</span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+              </div>
+              <p class="text-gray-600 mt-2">{{ review.resena|default:"Sin comentario adicional" }}</p>
+
+              {% if review.imagen %}
+                <img src="{{ review.imagen.url }}" alt="Imagen reseña" class="mt-3 w-24 h-24 object-cover rounded-lg border">
+              {% endif %}
+
+              <p class="mt-2 text-xs text-gray-400">Por {{ review.user }} – {{ review.created_at|date:"d M Y" }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="text-gray-500 italic">Aún no hay reseñas para este producto.</p>
+      {% endif %}
+    </div>
+
+    <!-- Formulario -->
+    <div class="border-t border-gray-200 px-8 py-6">
+      <h2 class="text-2xl font-medium text-gray-800 mb-4">Deja tu reseña</h2>
+
+      {% if user.is_authenticated %}
+        <form method="post" enctype="multipart/form-data" class="space-y-5">
+          {% csrf_token %}
+
+          <input type="hidden" name="calificacion" id="rating-value" value="0">
+
+          <!-- Estrellas -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Tu calificación</label>
+            <div class="flex space-x-1 text-2xl" id="star-rating">
+              {% for i in "12345" %}
+                <button type="button" data-value="{{ i }}" class="group">
+                  <span class="star text-gray-300 group-hover:text-yellow-400 transition">&#9733;</span>
+                </button>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div>
+            <label for="titulo" class="block text-sm font-medium text-gray-700">Título</label>
+            <input type="text" name="titulo" id="titulo" maxlength="255" required
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 outline-none">
+          </div>
+
+          <div>
+            <label for="resena" class="block text-sm font-medium text-gray-700">Tu opinión</label>
+            <textarea name="resena" id="resena" rows="4" maxlength="500"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 outline-none"></textarea>
+          </div>
+
+          <div>
+            <label for="imagen" class="block text-sm font-medium text-gray-700">Imagen (opcional)</label>
+            <input type="file" name="imagen" id="imagen"
+              class="block w-full text-sm text-gray-600 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+          </div>
+
+          <button type="submit"
+            class="bg-blue-600 hover:bg-blue-700 transition px-6 py-2 text-white font-semibold rounded-lg shadow">
+            Publicar reseña
+          </button>
+        </form>
+      {% else %}
+        <p class="text-gray-600">
+          Debes <a href="{% url 'login' %}" class="text-blue-600 underline">iniciar sesión</a> para dejar una reseña.
+        </p>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<!-- JS para estrellas -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const starButtons = document.querySelectorAll('#star-rating button');
+    const ratingInput = document.getElementById('rating-value');
+
+    starButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const value = parseInt(button.getAttribute('data-value'));
+        ratingInput.value = value;
+
+        starButtons.forEach((btn, index) => {
+          const star = btn.querySelector('.star');
+          if (index < value) {
+            star.classList.remove('text-gray-300');
+            star.classList.add('text-yellow-400');
+          } else {
+            star.classList.remove('text-yellow-400');
+            star.classList.add('text-gray-300');
+          }
+        });
+      });
+    });
+  });
+</script>
+
+{% endblock %}

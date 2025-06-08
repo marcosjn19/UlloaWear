@@ -1,7 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-
+<style>
+  .star:hover ~ .star {
+    color: #9CA3AF; /* gris */
+  }
+  .star.text-yellow-500 ~ .star {
+    color: #FBBF24; /* amarillo */
+  }
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -145,158 +152,14 @@
         </div>
 
         <!-- Menú secundario con submenús desplegables -->
+        {% load categorias_menu %}
+
         <nav class="bg-indigo-700 text-white text-sm">
-            <ul class="max-w-7xl mx-auto flex overflow-x-visible whitespace-nowrap px-4 lg:px-8">
-
-                <!-- 1. Accesorios -->
-                <li class="relative group">
-                    <a href="#" class="block py-3 px-4 hover:bg-indigo-800">Accesorios</a>
-
-                    <!-- Submenú -->
-                    <div
-                        class="absolute top-full left-0 w-56 bg-white text-gray-800 shadow-lg hidden group-hover:block group-focus-within:block z-20">
-                        <ul class="py-2">
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Sombreros / Gorras</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Lentes de sol</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Bufandas / Pañuelos</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Cinturones</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Relojes</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Bolsas / Mochilas</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Joyería</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Guantes</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <!-- 2. Ropa Superior -->
-                <li class="relative group">
-                    <a href="#" class="block py-3 px-4 hover:bg-indigo-800">Ropa&nbsp;Superior</a>
-
-                    <div
-                        class="absolute top-full left-0 w-64 bg-white text-gray-800 shadow-lg hidden group-hover:block group-focus-within:block z-20">
-                        <ul class="py-2 space-y-1">
-                            <li class="px-4 font-semibold text-gray-500">Playeras</li>
-                            <li><a href="#" class="block px-8 py-1 hover:bg-gray-100">Básicas</a></li>
-                            <li><a href="#" class="block px-8 py-1 hover:bg-gray-100">Estampadas</a></li>
-                            <li><a href="#" class="block px-8 py-1 hover:bg-gray-100">Oversize</a></li>
-
-                            <li class="px-4 mt-2 font-semibold text-gray-500">Camisas</li>
-                            <li><a href="#" class="block px-8 py-1 hover:bg-gray-100">Casual</a></li>
-                            <li><a href="#" class="block px-8 py-1 hover:bg-gray-100">Formal</a></li>
-                            <li><a href="#" class="block px-8 py-1 hover:bg-gray-100">Manga larga / corta</a></li>
-
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100 mt-2">Polos</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Blusas</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Sudaderas / Hoodies</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Chamaras</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Abrigos</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Chalecos</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <!-- 3. Ropa Inferior -->
-                <li class="relative group">
-                    <a href="#" class="block py-3 px-4 hover:bg-indigo-800">Ropa&nbsp;Inferior</a>
-
-                    <div
-                        class="absolute top-full left-0 w-56 bg-white text-gray-800 shadow-lg hidden group-hover:block group-focus-within:block z-20">
-                        <ul class="py-2">
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Jeans</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Pantalones</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Cargo</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Chinos</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Formales</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Shorts / Bermudas</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Faldas</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Leggings</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Joggers</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <!-- 4. Prendas Completas -->
-                <li class="relative group">
-                    <a href="#" class="block py-3 px-4 hover:bg-indigo-800">Prendas Completas</a>
-
-                    <div
-                        class="absolute top-full left-0 w-56 bg-white text-gray-800 shadow-lg hidden group-hover:block group-focus-within:block z-20">
-                        <ul class="py-2">
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Vestidos casual</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Vestidos elegantes</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Monos / Overoles</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Conjuntos coordinados</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <!-- 5. Calzado -->
-                <li class="relative group">
-                    <a href="#" class="block py-3 px-4 hover:bg-indigo-800">Calzado</a>
-
-                    <div
-                        class="absolute top-full left-0 w-56 bg-white text-gray-800 shadow-lg hidden group-hover:block group-focus-within:block z-20">
-                        <ul class="py-2">
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Tenis deportivos</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Tenis urbanos</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Zapatos formales</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Zapatos casuales</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Botas / Botines</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Sandalias</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Flats / Mocasines</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Tacones</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <!-- 6. Interior y Lencería -->
-                <li class="relative group">
-                    <a href="#" class="block py-3 px-4 hover:bg-indigo-800">Interior &nbsp;|&nbsp; Lencería</a>
-
-                    <div
-                        class="absolute top-full left-0 w-56 bg-white text-gray-800 shadow-lg hidden group-hover:block group-focus-within:block z-20">
-                        <ul class="py-2">
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Ropa interior</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Brasieres / Tops</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Bodies</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Pijamas</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Calcetas / Medias</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <!-- 7. Deportiva -->
-                <li class="relative group">
-                    <a href="#" class="block py-3 px-4 hover:bg-indigo-800">Deportiva</a>
-
-                    <div
-                        class="absolute top-full left-0 w-56 bg-white text-gray-800 shadow-lg hidden group-hover:block group-focus-within:block z-20">
-                        <ul class="py-2">
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Tops deportivos</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Leggings / Shorts</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Conjuntos fitness</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Ropa térmica</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Trajes de baño</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <!-- 8. Kids -->
-                <li class="relative group">
-                    <a href="#" class="block py-3 px-4 hover:bg-indigo-800">Kids</a>
-
-                    <div
-                        class="absolute top-full left-0 w-56 bg-white text-gray-800 shadow-lg hidden group-hover:block group-focus-within:block z-20">
-                        <ul class="py-2">
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Ropa para bebés</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Ropa infantil</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Calzado infantil</a></li>
-                            <li><a href="#" class="block px-4 py-1 hover:bg-gray-100">Accesorios para niños</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-            </ul>
+        <ul class="max-w-7xl mx-auto flex overflow-x-visible whitespace-nowrap px-4 lg:px-8">
+            {% for categoria in categorias_menu %}
+            {% render_categoria categoria %}
+            {% endfor %}
+        </ul>
         </nav>
     </header>
 
