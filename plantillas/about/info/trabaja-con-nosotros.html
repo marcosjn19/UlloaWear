@@ -1,19 +1,304 @@
 {% extends "base.html" %}
-{% block title %}Trabaja con nosotros – UlloaWear{% endblock %}
+{% load static %}
+{% block title %}Trabaja con Nosotros – UlloaWear{% endblock %}
 {% block content %}
-<div class="max-w-3xl mx-auto py-12 px-4">
-    <h1 class="text-3xl font-semibold mb-6">Trabaja con nosotros</h1>
-    <p class="text-gray-700 leading-relaxed">
-        Si te apasiona la moda y la innovación, únete a nuestro equipo. Actualmente buscamos:
-    </p>
-    <ul class="list-disc list-inside text-gray-700 mt-4 space-y-2">
-        <li>Diseñador(a) de ropa casual</li>
-        <li>Especialista en e-commerce</li>
-        <li>Community manager</li>
-    </ul>
-    <p class="mt-6">
-        Envía tu CV a <a href="mailto:talento@ulloawear.com" class="text-indigo-600 hover:underline">
-            talento@ulloawear.com</a>
-    </p>
+<div class="bg-gray-50 min-h-screen">
+    <!-- Hero Section con Imagen -->
+    <div class="relative bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-6">Trabaja con Nosotros</h1>
+                    <p class="text-xl text-indigo-100 leading-relaxed">
+                        Únete a un equipo apasionado por la moda sostenible y la innovación. Construyamos juntos el futuro de la industria textil.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="max-w-6xl mx-auto py-16 px-4">
+        <!-- Por qué UlloaWear -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Por qué UlloaWear?</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="prose prose-lg mx-auto text-gray-700">
+                <p class="text-xl text-gray-600 mb-6 text-center">
+                    Si te apasiona la moda y la innovación, únete a nuestro equipo donde cada día es una oportunidad de marcar la diferencia.
+                </p>
+                
+                <p class="leading-relaxed mb-6">
+                    En UlloaWear no solo creamos ropa, creamos experiencias que transforman la manera en que las personas se relacionan con la moda. Somos pioneros en sostenibilidad, innovación y responsabilidad social, y buscamos personas que compartan nuestra visión de un futuro más consciente.
+                </p>
+                
+                <p class="leading-relaxed">
+                    Ofrecemos un ambiente de trabajo colaborativo, oportunidades de crecimiento profesional y la satisfacción de contribuir a un impacto positivo en el mundo.
+                </p>
+            </div>
+        </div>
+
+        <!-- Beneficios -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Beneficios de Nuestro Equipo</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Crecimiento Profesional</h3>
+                    <p class="text-gray-600">Capacitación continua, mentoría y oportunidades de desarrollo en un ambiente innovador.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Ambiente Positivo</h3>
+                    <p class="text-gray-600">Cultura colaborativa, diversa e inclusiva donde cada voz es valorada y escuchada.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2-1.343-2-3-2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14c1.657 0 3-.895 3-2s-1.343-2-3-2-3 .895-3 2 1.343 2 3 2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14c1.657 0 3-.895 3-2s-1.343-2-3-2-3 .895-3 2 1.343 2 3 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Compensación Competitiva</h3>
+                    <p class="text-gray-600">Salarios justos, bonos por desempeño y beneficios superiores al promedio del mercado.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vacantes Actuales -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Oportunidades Actuales</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Diseñador de Ropa -->
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Diseñador(a) de Ropa Casual</h3>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Tiempo Completo</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Torreón, Coahuila</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Creativo</span>
+                            </div>
+                        </div>
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium">
+                            Aplicar
+                        </button>
+                    </div>
+                    <p class="text-gray-600 mb-3">
+                        Buscamos un diseñador creativo para desarrollar colecciones de ropa casual sostenible. Experiencia en diseño textil y conocimiento de tendencias de moda responsable.
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <strong>Requisitos:</strong> Licenciatura en Diseño de Moda, 3+ años de experiencia, dominio de software de diseño.
+                    </div>
+                </div>
+
+                <!-- Especialista E-commerce -->
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Especialista en E-commerce</h3>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Tiempo Completo</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Remoto/Híbrido</span>
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Digital</span>
+                            </div>
+                        </div>
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium">
+                            Aplicar
+                        </button>
+                    </div>
+                    <p class="text-gray-600 mb-3">
+                        Responsable de optimizar nuestra plataforma de ventas online, análisis de datos, estrategias de conversión y experiencia del usuario.
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <strong>Requisitos:</strong> Experiencia en e-commerce, Google Analytics, SEO/SEM, conocimiento de plataformas como Shopify o Django.
+                    </div>
+                </div>
+
+                <!-- Community Manager -->
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Community Manager</h3>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Tiempo Completo</span>
+                                <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">Remoto</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Social Media</span>
+                            </div>
+                        </div>
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium">
+                            Aplicar
+                        </button>
+                    </div>
+                    <p class="text-gray-600 mb-3">
+                        Gestión de redes sociales, creación de contenido atractivo, interacción con la comunidad y estrategias de engagement para nuestra marca.
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <strong>Requisitos:</strong> Experiencia en redes sociales, creación de contenido, diseño básico, conocimiento de tendencias digitales.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceso de Selección -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Proceso de Selección</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Envía tu aplicación</h3>
+                            <p class="text-gray-600">CV actualizado y carta de presentación a talento@ulloawear.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Revisión inicial</h3>
+                            <p class="text-gray-600">Evaluamos tu perfil y experiencia (3-5 días hábiles)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Entrevista virtual</h3>
+                            <p class="text-gray-600">Conversación con el equipo de Recursos Humanos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Entrevista técnica</h3>
+                            <p class="text-gray-600">Evaluación específica con el equipo del área</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Oferta de trabajo</h3>
+                            <p class="text-gray-600">¡Bienvenido al equipo UlloaWear!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lo que Valoramos -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Lo que Valoramos</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Pasión por la moda sostenible y consciente</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Mentalidad colaborativa y trabajo en equipo</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Adaptabilidad y ganas de aprender constantemente</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Iniciativa y pensamiento creativo</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Compromiso con la excelencia y atención al detalle</p>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 border-l-4 border-indigo-400 p-4 mt-6">
+                    <div class="flex">
+                        <svg class="w-5 h-5 text-indigo-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="ml-3">
+                            <p class="text-sm text-indigo-700">
+                                <strong>Diversidad e Inclusión:</strong> Celebramos la diversidad y promovemos un ambiente inclusivo donde todos pueden prosperar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Carreras -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Preguntas Frecuentes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Ofrecen trabajo remoto?</h3>
+                    <p class="text-gray-600 mb-4">Sí, muchas de nuestras posiciones son completamente remotas o híbridas, adaptándonos a las necesidades del talento.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Hay oportunidades de crecimiento?</h3>
+                    <p class="text-gray-600 mb-4">Absolutamente. Invertimos en el desarrollo profesional de nuestro equipo con capacitaciones, mentoría y promociones internas.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Qué beneficios ofrecen?</h3>
+                    <p class="text-gray-600 mb-4">Seguro médico, días de vacaciones superiores a la ley, bonos por desempeño, descuentos en productos y ambiente flexible.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Contratan practicantes?</h3>
+                    <p class="text-gray-600 mb-4">Sí, tenemos programas de prácticas profesionales. Envía tu información y te contactaremos cuando haya oportunidades.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="bg-indigo-700 rounded-2xl p-8 text-white text-center">
+            <h2 class="text-2xl font-bold mb-4">¿Listo para Unirte a UlloaWear?</h2>
+            <p class="text-indigo-100 mb-6">Envía tu CV y comienza tu viaje hacia una carrera que realmente importa.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:talento@ulloawear.com" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Enviar CV a talento@ulloawear.com
+                </a>
+                <a href="{% url 'sobre' %}" class="bg-indigo-600 bg-opacity-50 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-70 transition-colors">
+                    Conoce Más Sobre Nosotros
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

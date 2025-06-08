@@ -1,16 +1,187 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Política de devolución – UlloaWear{% endblock %}
 {% block content %}
-<div class="max-w-3xl mx-auto py-12 px-4">
-    <h1 class="text-3xl font-semibold mb-6">{{ title }}</h1>
-    <p class="text-gray-700 leading-relaxed">
-        En UlloaWear aceptamos devoluciones hasta 30 días después de la compra.
-        El producto debe estar en perfectas condiciones y con su empaque original.
-    </p>
-    <ul class="list-disc list-inside text-gray-700 mt-4 space-y-2">
-        <li>Solicita tu devolución desde tu perfil en “Mis pedidos”.</li>
-        <li>Empaca tu artículo y entrégalo en tu punto de paquetería más cercano.</li>
-        <li>Procesaremos tu reembolso en un plazo de 5–7 días hábiles.</li>
-    </ul>
+<div class="bg-gray-50 min-h-screen">
+    <!-- Hero Section con Imagen -->
+    <div class="relative bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-6">Política de Devolución</h1>
+                    <p class="text-xl text-indigo-100 leading-relaxed">
+                        Conoce en detalle nuestras condiciones para devoluciones y el proceso de reembolso que garantizan tu satisfacción.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="max-w-6xl mx-auto py-16 px-4">
+        <!-- Resumen de la Política -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Resumen de Nuestra Política</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">30 Días</h3>
+                    <p class="text-gray-600">Tiempo límite para solicitar tu devolución</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">100% Reembolso</h3>
+                    <p class="text-gray-600">Devolución completa del dinero</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Envío Gratis</h3>
+                    <p class="text-gray-600">No pagas el envío de devolución</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceso de Devolución -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Proceso de Devolución</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Solicita tu devolución</h3>
+                            <p class="text-gray-600">Accede a tu perfil en "Mis pedidos" y selecciona el artículo que deseas devolver.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Empaca el producto</h3>
+                            <p class="text-gray-600">Asegúrate de incluir el empaque original y todos los accesorios.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Envía el paquete</h3>
+                            <p class="text-gray-600">Entrégalo en tu punto de paquetería más cercano con la etiqueta prepagada.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Recibe tu reembolso</h3>
+                            <p class="text-gray-600">Procesaremos tu reembolso en un plazo de 5–7 días hábiles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Condiciones -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Condiciones para Devolución</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Producto en perfectas condiciones, sin uso</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Empaque original intacto con todas las etiquetas</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Solicitud dentro de los 30 días naturales</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Comprobante de compra válido</p>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 border-l-4 border-amber-400 p-4 mt-6">
+                    <div class="flex">
+                        <svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="ml-3">
+                            <p class="text-sm text-amber-700">
+                                <strong>Nota importante:</strong> Los productos personalizados o de higiene personal no son elegibles para devolución.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Preguntas Frecuentes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Cuándo recibiré mi reembolso?</h3>
+                    <p class="text-gray-600 mb-4">Una vez que recibamos tu producto, procesaremos el reembolso en 5-7 días hábiles. El tiempo de llegada a tu cuenta bancaria puede variar según tu institución financiera.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Puedo cambiar por otra talla?</h3>
+                    <p class="text-gray-600 mb-4">Sí, puedes solicitar un cambio por otra talla disponible. El proceso es el mismo que una devolución, pero selecciona "cambio" en lugar de "reembolso".</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Hay costo por la devolución?</h3>
+                    <p class="text-gray-600 mb-4">No, el envío de devolución es completamente gratuito. Te proporcionaremos una etiqueta prepagada para que no tengas ningún costo.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Qué pasa si mi producto llegó defectuoso?</h3>
+                    <p class="text-gray-600 mb-4">Si tu producto llegó con algún defecto de fábrica, contáctanos inmediatamente. Procesaremos tu cambio de forma prioritaria sin costo alguno.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="bg-indigo-700 rounded-2xl p-8 text-white text-center mt-12">
+            <h2 class="text-2xl font-bold mb-4">¿Necesitas ayuda con tu devolución?</h2>
+            <p class="text-indigo-100 mb-6">Nuestro equipo de atención al cliente está aquí para ayudarte en cada paso del proceso.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:soporte@ulloawear.com" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Enviar Email
+                </a>
+                <a href="tel:871-123-4567" class="bg-indigo-600 bg-opacity-50 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-70 transition-colors">
+                    Llamar Ahora
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -1,17 +1,145 @@
 {% extends "base.html" %}
 {% block title %}Ayuda – UlloaWear{% endblock %}
+
 {% block content %}
-<div class="max-w-3xl mx-auto py-12 px-4">
-    <h1 class="text-3xl font-semibold mb-6">Centro de ayuda</h1>
-    <p class="text-gray-700 leading-relaxed mb-4">
-        Si tienes alguna duda sobre envíos, devoluciones o tallas, aquí encontrarás
-        las respuestas más frecuentes.
-    </p>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li><strong>¿Cómo rastreo mi pedido?</strong> Ingresa a “Mis pedidos” en tu perfil.</li>
-        <li><strong>Política de devoluciones:</strong> Tienes 30 días para devolver tu compra.</li>
-        <li><strong>Contáctanos:</strong> escribe a <a href="mailto:soporte@ulloawear.com"
-                class="text-indigo-500 hover:underline">soporte@ulloawear.com</a>.</li>
-    </ul>
+<div class="bg-gray-50 min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-6">Centro de Ayuda</h1>
+                    <p class="text-xl text-indigo-100 leading-relaxed">
+                        Encuentra respuestas sobre envíos, devoluciones, tallas y más.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-6xl mx-auto py-16 px-4">
+
+        <!-- FAQ Rápido -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Preguntas Frecuentes</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Cómo rastreo mi pedido?</h3>
+                    <p class="text-gray-600 mb-4">
+                        Ingresa a <em>Mis pedidos</em> en tu perfil y haz clic en <strong>Ver seguimiento</strong>.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Cuál es la política de devoluciones?</h3>
+                    <p class="text-gray-600 mb-4">
+                        Cuentas con 30&nbsp;días naturales desde la entrega para solicitar un reembolso o cambio.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Guía de tallas</h3>
+                    <p class="text-gray-600 mb-4">
+                        Consulta la tabla interactiva en cada producto o visita nuestra <a href="# class="text-indigo-600 hover:underline">página de tallas</a>.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Métodos de pago aceptados</h3>
+                    <p class="text-gray-600 mb-4">
+                        Aceptamos tarjetas de débito/crédito, PayPal y transferencias SPEI.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categorías de Ayuda -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Categorías de Soporte</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="truck" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Envíos</h3>
+                </div>
+                <div class="text-center">
+                    <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="rotate-ccw" class="w-8 h-8 text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Devoluciones</h3>
+                </div>
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="bookmark" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Tallas</h3>
+                </div>
+                <div class="text-center">
+                    <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="credit-card" class="w-8 h-8 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Pagos</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto de Soporte -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Necesitas Más Ayuda?</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex items-start space-x-4">
+                    <div class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center">
+                        <i data-feather="mail" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900 mb-1">Correo Electrónico</h3>
+                        <a href="mailto:soporte@ulloawear.com" class="text-indigo-600 hover:underline">
+                            soporte@ulloawear.com
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center">
+                        <i data-feather="clock" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900 mb-1">Horario de Atención</h3>
+                        <p class="text-gray-700">Lunes a viernes, 9&nbsp;—&nbsp;18&nbsp;h&nbsp;(CST)</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center">
+                        <i data-feather="message-square" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900 mb-1">Chat en Vivo</h3>
+                        <p class="text-gray-700">Disponible en la esquina inferior derecha de la pantalla.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="bg-indigo-700 rounded-2xl p-8 text-white text-center">
+            <h2 class="text-2xl font-bold mb-4">Estamos para Ayudarte</h2>
+            <p class="text-indigo-100 mb-6">Contáctanos y obtén soporte personalizado.</p>
+            <a href="mailto:soporte@ulloawear.com" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                Escribir al Soporte
+            </a>
+        </section>
+    </main>
 </div>
 {% endblock %}

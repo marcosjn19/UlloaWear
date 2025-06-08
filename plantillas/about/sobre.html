@@ -1,16 +1,209 @@
 {% extends "base.html" %}
 {% block title %}Sobre UlloaWear{% endblock %}
+
 {% block content %}
-<div class="max-w-3xl mx-auto py-12 px-4">
-    <h1 class="text-3xl font-semibold mb-6">Sobre UlloaWear</h1>
-    <p class="text-gray-700 leading-relaxed">
-        En <strong>UlloaWear</strong> somos un equipo apasionado por la moda
-        sostenible y el diseño atemporal. Desde 2025, creamos prendas
-        versátiles, fabricadas en México con los más altos estándares de calidad.
-    </p>
-    <p class="text-gray-700 leading-relaxed mt-4">
-        Nuestra misión es ofrecerte estilo y confort, cuidando el medio ambiente
-        y apoyando a productores locales.
-    </p>
+<div class="bg-gray-50 min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-6">Sobre UlloaWear</h1>
+                    <p class="text-xl text-indigo-100 leading-relaxed">
+                        Moda atemporal, compromiso local y sostenibilidad global desde 2025.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-6xl mx-auto py-16 px-4">
+
+        <!-- Nuestra Historia -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestra Historia</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="prose prose-lg mx-auto text-gray-700">
+                <p class="text-xl text-gray-600 mb-6 text-center">
+                    Nacimos en Torreón, Coahuila, con la visión de transformar la moda mexicana
+                    en un referente de ética y durabilidad.
+                </p>
+
+                <p class="leading-relaxed mb-6">
+                    Desde el inicio fusionamos diseño contemporáneo con prácticas de producción responsables.
+                    Trabajamos con talleres locales, utilizamos tejidos certificados y reducimos
+                    nuestro impacto ambiental mediante procesos de baja huella de carbono.
+                </p>
+
+                <p class="leading-relaxed">
+                    Hoy expandimos nuestro compromiso a plataformas digitales, impulsando tecnología que
+                    conecta a consumidores conscientes con moda de calidad.
+                </p>
+            </div>
+        </section>
+
+        <!-- Valores fundamentales -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestros Valores</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="leaf" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Sostenibilidad</h3>
+                    <p class="text-gray-600">Minimizamos residuos y elegimos materias primas responsables.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="users" class="w-8 h-8 text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Comunidad</h3>
+                    <p class="text-gray-600">Colaboramos con artesanos y fomentamos empleo digno localmente.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="shield" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Transparencia</h3>
+                    <p class="text-gray-600">Compartimos cada paso de nuestra cadena de suministro.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impacto Social y Ambiental -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Impacto Positivo</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div>
+                    <p class="text-4xl font-bold text-indigo-600">+80%</p>
+                    <p class="text-gray-700 mt-2">Materiales orgánicos o reciclados en nuestras colecciones 2024-25.</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-bold text-indigo-600">120</p>
+                    <p class="text-gray-700 mt-2">Empleos directos generados en talleres locales.</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-bold text-indigo-600">2.5&nbsp;ton</p>
+                    <p class="text-gray-700 mt-2">CO₂ evitado mediante producción de energía solar en planta.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cronología -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestra Trayectoria</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                    <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2025</div>
+                    <p class="text-gray-700">
+                        Fundación de UlloaWear y primera colección cápsula hecha con algodón reciclado.
+                    </p>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2026</div>
+                    <p class="text-gray-700">
+                        Certificación de cadena de valor Fair Trade y apertura de la tienda insignia en Torreón.
+                    </p>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2028</div>
+                    <p class="text-gray-700">
+                        Implementación de energía solar en 100 % de nuestras instalaciones de producción.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipo -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Equipo Directivo</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="user" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">María Ulloa</h3>
+                    <p class="text-gray-600">CEO & Fundadora</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="scissors" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Carlos Rivera</h3>
+                    <p class="text-gray-600">Director Creativo</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="bar-chart" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Sandra López</h3>
+                    <p class="text-gray-600">Directora de Sostenibilidad</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Misión y Visión -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Misión & Visión</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-indigo-50 border-l-4 border-indigo-400 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 flex items-center">
+                        <i data-feather="target" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                        Misión
+                    </h3>
+                    <p class="text-gray-700">
+                        Ofrecer ropa atemporal que combine estilo y comodidad,
+                        fabricada éticamente en México, minimizando nuestro impacto ambiental.
+                    </p>
+                </div>
+
+                <div class="bg-indigo-50 border-l-4 border-indigo-400 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 flex items-center">
+                        <i data-feather="eye" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                        Visión
+                    </h3>
+                    <p class="text-gray-700">
+                        Ser la marca mexicana líder en innovación sostenible,
+                        inspirando a la industria a priorizar al planeta y a las personas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="bg-indigo-700 rounded-2xl p-8 text-white text-center">
+            <h2 class="text-2xl font-bold mb-4">Únete al Cambio</h2>
+            <p class="text-indigo-100 mb-6">Sé parte de nuestra comunidad y viste con propósito.</p>
+            <a href="{% url 'info_page' 'marketplace' %}" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                Explorar Colecciones
+            </a>
+        </section>
+    </main>
 </div>
 {% endblock %}

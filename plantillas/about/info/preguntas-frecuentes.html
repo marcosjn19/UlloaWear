@@ -1,16 +1,233 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Preguntas frecuentes – UlloaWear{% endblock %}
 {% block content %}
-<div class="max-w-3xl mx-auto py-12 px-4">
-    <h1 class="text-3xl font-semibold mb-6">Preguntas frecuentes</h1>
-    <dl class="space-y-6">
-        <dt class="font-medium">¿Cómo cambio mi talla?</dt>
-        <dd class="text-gray-700">Puedes cambiar la talla antes de que tu pedido sea procesado desde “Mis pedidos”.</dd>
-        <dt class="font-medium">¿Puedo combinar cupones?</dt>
-        <dd class="text-gray-700">No, solo se puede aplicar un cupón por pedido.</dd>
-        <dt class="font-medium">¿Ofrecen garantía?</dt>
-        <dd class="text-gray-700">Todos nuestros productos tienen garantía de 6 meses contra defectos de fabricación.
-        </dd>
-    </dl>
+<div class="bg-gray-50 min-h-screen">
+    <!-- Hero Section -->
+    <div class="relative bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-6">Preguntas Frecuentes</h1>
+                    <p class="text-xl text-indigo-100 leading-relaxed">
+                        Encuentra respuestas rápidas a las dudas más comunes de nuestros clientes. Si no encuentras lo que buscas, ¡contáctanos!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="max-w-6xl mx-auto py-16 px-4">
+        <!-- Buscador -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">¿Qué necesitas saber?</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text" placeholder="Buscar en preguntas frecuentes..." 
+                           class="w-full border-2 border-gray-300 rounded-xl px-4 py-4 pl-12 text-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all">
+                    <svg class="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categorías -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow cursor-pointer">
+                <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Pedidos</h3>
+                <p class="text-gray-600">Información sobre compras, cambios y cancelaciones</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow cursor-pointer">
+                <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Envíos</h3>
+                <p class="text-gray-600">Tiempos, costos y seguimiento de entregas</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow cursor-pointer">
+                <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Productos</h3>
+                <p class="text-gray-600">Tallas, materiales y cuidado de la ropa</p>
+            </div>
+        </div>
+
+        <!-- Preguntas Frecuentes por Categoría -->
+        <div class="space-y-12">
+            <!-- Pedidos -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Pedidos y Compras</h2>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                            <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold mr-3">?</span>
+                            ¿Cómo cambio mi talla?
+                        </h3>
+                        <p class="text-gray-700 ml-9 leading-relaxed">
+                            Puedes cambiar la talla antes de que tu pedido sea procesado desde "Mis pedidos" en tu cuenta. Una vez que el pedido esté en proceso de envío, deberás seguir nuestro proceso de devolución e intercambio.
+                        </p>
+                    </div>
+                    
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                            <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold mr-3">?</span>
+                            ¿Puedo combinar cupones?
+                        </h3>
+                        <p class="text-gray-700 ml-9 leading-relaxed">
+                            No, solo se puede aplicar un cupón por pedido. El sistema automáticamente aplicará el cupón que te ofrezca el mayor descuento disponible.
+                        </p>
+                    </div>
+                    
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                            <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold mr-3">?</span>
+                            ¿Puedo cancelar mi pedido?
+                        </h3>
+                        <p class="text-gray-700 ml-9 leading-relaxed">
+                            Sí, puedes cancelar tu pedido sin costo antes de que sea enviado. Una vez que esté en tránsito, podrás devolverlo siguiendo nuestra política de devoluciones.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                            <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold mr-3">?</span>
+                            ¿Qué métodos de pago aceptan?
+                        </h3>
+                        <p class="text-gray-700 ml-9 leading-relaxed">
+                            Aceptamos todas las tarjetas de crédito y débito principales, PayPal, transferencias bancarias y pagos en efectivo en tiendas OXXO y otros establecimientos afiliados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Envíos -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Envíos y Entregas</h2>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                            <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold mr-3">?</span>
+                            ¿Cuánto cuesta el envío?
+                        </h3>
+                        <p class="text-gray-700 ml-9 leading-relaxed">
+                            El envío es gratis en pedidos mayores a $999 MXN. Para pedidos menores, el costo varía según tu ubicación y se calcula automáticamente al momento del checkout.
+                        </p>
+                    </div>
+                    
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                            <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold mr-3">?</span>
+                            ¿Cuánto tiempo tarda la entrega?
+                        </h3>
+                        <p class="text-gray-700 ml-9 leading-relaxed">
+                            Los tiempos varían según tu ubicación: CDMX y área metropolitana (1-3 días), ciudades principales (2-4 días), resto del país (3-7 días hábiles).
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                            <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold mr-3">?</span>
+                            ¿Puedo rastrear mi pedido?
+                        </h3>
+                        <p class="text-gray-700 ml-9 leading-relaxed">
+                            Sí, recibirás un número de rastreo por email una vez que tu pedido sea enviado. También puedes consultar el estado en la sección "Rastrear pedido" de nuestro sitio web.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Productos -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Productos y Garantía</h2>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                            <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold mr-3">?</span>
+                            ¿Ofrecen garantía?
+                        </h3>
+                        <p class="text-gray-700 ml-9 leading-relaxed">
+                            Todos nuestros productos tienen garantía de 6 meses contra defectos de fabricación. Además, ofrecemos 30 días para devoluciones sin preguntas.
+                        </p>
+                    </div>
+                    
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                            <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold mr-3">?</span>
+                            ¿Cómo elijo la talla correcta?
+                        </h3>
+                        <p class="text-gray-700 ml-9 leading-relaxed">
+                            Consulta nuestra guía de tallas en cada producto. Medimos todas nuestras prendas para darte las dimensiones exactas. Si tienes dudas, contáctanos para asesorarte.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                            <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold mr-3">?</span>
+                            ¿Cómo cuido mis prendas UlloaWear?
+                        </h3>
+                        <p class="text-gray-700 ml-9 leading-relaxed">
+                            Cada prenda incluye instrucciones específicas de cuidado en la etiqueta. En general, recomendamos lavar en agua fría, evitar la secadora en exceso y planchar a temperatura media.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="bg-indigo-700 rounded-2xl p-8 text-white text-center mt-12">
+            <h2 class="text-2xl font-bold mb-4">¿No encontraste lo que buscabas?</h2>
+            <p class="text-indigo-100 mb-6">Nuestro equipo de atención al cliente está aquí para ayudarte con cualquier pregunta específica que tengas.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:soporte@ulloawear.com" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Enviar Email
+                </a>
+                <a href="tel:871-123-4567" class="bg-indigo-600 bg-opacity-50 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-70 transition-colors">
+                    Llamar Ahora
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
