@@ -24,6 +24,7 @@ services:
       - DB_USER=ullouser
       - DB_PASSWORD=ullopass
       - DB_HOST=db
+    env_file: .env
   
 
 volumes:

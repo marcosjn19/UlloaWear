@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Iniciar sesión – UlloaWear{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto py-12">
+    <h1 class="text-2xl font-semibold text-center mb-8">Iniciar sesión</h1>
+    <form method="post" class="space-y-6">
+        {% csrf_token %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="text-red-600 text-sm text-center">{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        <div class="grid gap-4">
+            <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+            <input id="email" name="email" type="email" required class="form-control border rounded w-full py-2 px-3">
+            <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+            <input id="password" name="password" type="password" required
+                class="form-control border rounded w-full py-2 px-3">
+        </div>
+        <button type="submit"
+            class="w-full py-3 bg-indigo-600 text-white rounded font-medium hover:bg-indigo-700 transition">
+            Entrar
+        </button>
+    </form>
+    <p class="text-center text-sm mt-6">
+        <!-- GitHub -->
+        <a href="{% url 'social:begin' 'github' %}"
+            class="flex items-center justify-center w-full py-3 border rounded-xl gap-2 hover:bg-gray-50 transition">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <!-- ícono GitHub simplificado -->
+                <path d="M12 .5A12 12 0 0 0 0 12.71c0 5.4 3.44 9.98 8.21 11.6..." />
+            </svg>
+            <span>Continuar con GitHub</span>
+        </a>
+
+        <!-- Discord -->
+        <a href="{% url 'social:begin' 'discord' %}"
+            class="flex items-center justify-center w-full py-3 border rounded-xl gap-2 mt-3 hover:bg-gray-50 transition">
+            <img src="{% static 'images/discord.svg' %}" class="h-5" alt="">
+            <span>Continuar con Discord</span>
+        </a>
+
+        ¿Aún no tienes cuenta?
+        <a href="{% url 'registrarse' %}" class="text-indigo-600 hover:underline">Crear cuenta</a>
+    </p>
+</div>
+{% endblock %}

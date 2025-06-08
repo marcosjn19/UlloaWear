@@ -5,17 +5,25 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager # type:
 
 # Create your models here.
 class AdministradorCuentas(BaseUserManager):
-    def create_user(self, nombre, apellido, usuario, email, password=None):
+    def create_user(self, nombre="", apellido="",
+                    usuario="", email="", password=None):
         return self.crear_usuario(nombre, apellido, usuario, email, password)
     
     def create_superuser(self, nombre, apellido, email, usuario, password):
         return self.crear_superusuario(nombre, apellido, email, usuario, password)
     
-    def crear_usuario(self, nombre, apellido, usuario, email, password=None):
+    def crear_usuario(self, nombre="", apellido="",
+                      usuario="", email="", password=None):
         if not email:
-            raise ValueError('El usuario debe tener un correo electrónico.')
+            raise ValueError("El usuario debe tener un correo electrónico.")
+
+        # Defaults si vienen vacíos (no dupliques nombres)
         if not usuario:
-            raise ValueError('El usuario debe tener un nombre de usuario.')
+            usuario = email.split("@")[0]
+        if not nombre:
+            nombre = "Usuario"
+        if not apellido:
+            apellido = ""
 
         user = self.model(
             email=self.normalize_email(email),
