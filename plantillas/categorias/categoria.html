@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="py-12 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-6">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">
+      Categoría: {{ categoria.nombre }}
+    </h1>
+
+    {% if productos %}
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {% for producto in productos %}
+          <a href="{{ producto.get_url }}" class="bg-white rounded-xl shadow hover:shadow-md transition block">
+            {% if producto.imagenes %}
+              <img src="{{ producto.imagenes.url }}" alt="{{ producto.nombre }}" class="w-full h-48 object-cover rounded-t-xl">
+            {% endif %}
+            <div class="p-4">
+              <h2 class="text-lg font-semibold text-gray-800">{{ producto.nombre }}</h2>
+              <p class="text-sm text-gray-500 mt-1">${{ producto.precio }}</p>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-gray-500">No hay productos en esta categoría.</p>
+    {% endif %}
+  </div>
+</section>
+
+{% endblock %}

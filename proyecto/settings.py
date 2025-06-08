@@ -81,6 +81,8 @@ TEMPLATES = [
                 # Social Auth
                 "social_django.context_processors.backends",
                 "social_django.context_processors.login_redirect",
+                # Categorias dinamicas
+                'categorias.context_processors.menu_categorias'
             ],
         },
     },
