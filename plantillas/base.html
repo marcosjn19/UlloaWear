@@ -53,7 +53,7 @@
                 <div class="hidden xl:flex items-center space-x-1 text-sm">
                     <i data-feather="user" class="w-4 h-4"></i>
                     <span>Asesores</span>
-                    <span>800&nbsp;123&nbsp;4567</span>
+                    <span>871&nbsp;123&nbsp;4567</span>
                     <i data-feather="chevron-down" class="w-4 h-4"></i>
                 </div>
 
@@ -82,8 +82,7 @@
                     <!-- CUENTA: contenedor -->
                     <div class="relative group">
                         <!-- Botón / icono -->
-                        <a href=""
-                            class="flex flex-col items-center text-xs focus:outline-none">
+                        <a href="" class="flex flex-col items-center text-xs focus:outline-none">
                             <i data-feather="user" class="w-6 h-6"></i>
                             {% if user.is_authenticated %}
                             <span>{{ user.nombre|default:user.usuario }}</span>
@@ -93,7 +92,8 @@
                         </a>
 
                         <!-- Desplegable -->
-                        <div class="absolute right-0 mt-2 w-72 bg-white shadow-xl rounded hidden group-hover:block group-focus-within:block z-30">
+                        <div
+                            class="absolute right-0 mt-2 w-72 bg-white shadow-xl rounded hidden group-hover:block group-focus-within:block z-30">
                             {% if user.is_authenticated %}
                             <!-- Usuario logueado -->
                             <div class="p-4 border-b text-center">
@@ -103,8 +103,10 @@
                             </div>
                             <ul class="grid grid-cols-3 text-center text-xs">
                                 <li class="p-4 hover:bg-gray-50">
-                                    <i data-feather="user" class="mx-auto mb-1 w-6 h-6"></i>
-                                    <span class="block">Mi perfil</span>
+                                    <a href="{% url 'editar_perfil' %}" class="flex flex-col items-center text-xs">
+                                        <i data-feather="user" class="mx-auto mb-1 w-6 h-6"></i>
+                                        <span class="block">Mi perfil</span>
+                                    </a>
                                 </li>
                                 <li class="p-4 hover:bg-gray-50">
                                     <i data-feather="truck" class="mx-auto mb-1 w-6 h-6"></i>
@@ -115,7 +117,7 @@
                                     <span class="block">Favoritos</span>
                                 </li>
                             </ul>
-                            <a href=""
+                            <a href="{% url 'cerrar_sesion' %}"
                                 class="block text-center text-red-600 py-3 hover:bg-gray-50">
                                 Cerrar sesión
                             </a>
@@ -125,10 +127,12 @@
                                 <h3 class="text-lg font-medium text-gray-600 mb-6">
                                     Inicia sesión en tu cuenta
                                 </h3>
-                                <a href="" class="inline-block w-full py-3 bg-indigo-600 text-white rounded font-semibold hover:bg-indido-700 transition">
+                                <a href="{% url 'iniciar_sesion' %}"
+                                    class="inline-block w-full py-3 bg-indigo-600 text-white rounded font-semibold hover:bg-indido-700 transition">
                                     Entrar
                                 </a>
-                                <a href="" class="inline-block w-full mt-4 py-3 border border-indigo-600 text-indigo-600 rounded font-semibold hover:bg-indigo-50 transition">
+                                <a href="{% url 'registrarse' %}"
+                                    class="inline-block w-full mt-4 py-3 border border-indigo-600 text-indigo-600 rounded font-semibold hover:bg-indigo-50 transition">
                                     Crear cuenta
                                 </a>
                             </div>
