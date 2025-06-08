@@ -6,10 +6,9 @@ from .models import Cuenta, PerfilUsuario
 # --- 1. clases Tailwind comunes ---
 INPUT_TAILWIND = (
     "w-full rounded-xl border border-gray-300 bg-white "
-    "py-3 px-4 placeholder-gray-400 "
+    "py-3 px-4 pr-10 placeholder-gray-400 "
     "focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
 )
-
 
 class FormularioRegistro(forms.ModelForm):
     usuario = forms.CharField(

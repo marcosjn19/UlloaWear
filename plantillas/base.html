@@ -1,14 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-<style>
-  .star:hover ~ .star {
-    color: #9CA3AF; /* gris */
-  }
-  .star.text-yellow-500 ~ .star {
-    color: #FBBF24; /* amarillo */
-  }
-</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+    <style src="{% static 'css/base.css' %}"></style>
 </head>
 
 <body class="flex min-h-screen flex-col text-gray-800">
@@ -25,15 +19,11 @@
     <!-- Barra superior informativa -->
     <div class="hidden lg:flex justify-between items-center text-xs bg-gray-100 px-4 py-1">
         <div class="space-x-4">
-            <a href="#" class="hover:underline">Blog de Estilo</a>
-            <a href="#" class="hover:underline">Guía de Tallas</a>
-            <a href="#" class="hover:underline">Sobre UlloaWear</a>
+            <span class="font-medium">Moda confiable desde 2025</span>
         </div>
         <div class="space-x-4">
-            <span class="font-medium">Moda confiable desde 2025</span>
-            <span class="hidden md:inline">871&nbsp;123&nbsp;4567</span>
-            <a href="#" class="hover:underline">Ayuda</a>
-            <a href="#" class="hover:underline">Chat en vivo</a>
+            <a href="{% url 'sobre' %}" class="hover:underline">Sobre UlloaWear</a>
+            <a href="{% url 'ayuda' %}" class="hover:underline">Ayuda</a>
         </div>
     </div>
 
@@ -48,14 +38,6 @@
                     <img src="{% static 'images/ulloa_wear_logo.png' %}" alt="UlloaWear" class="h-20 w-auto">
                     <span class="sr-only">Inicio</span>
                 </a>
-
-                <!-- Teléfono y asesor (opcional) -->
-                <div class="hidden xl:flex items-center space-x-1 text-sm">
-                    <i data-feather="user" class="w-4 h-4"></i>
-                    <span>Asesores</span>
-                    <span>871&nbsp;123&nbsp;4567</span>
-                    <i data-feather="chevron-down" class="w-4 h-4"></i>
-                </div>
 
                 <!-- Buscador -->
                 <div class="flex-1 mx-4">
@@ -91,9 +73,12 @@
                             {% endif %}
                         </a>
 
+                        <!-- Área invisible para mantener el hover -->
+                        <div class="absolute top-full right-0 w-72 h-2 bg-transparent group-hover:block hidden"></div>
+
                         <!-- Desplegable -->
                         <div
-                            class="absolute right-0 mt-2 w-72 bg-white shadow-xl rounded hidden group-hover:block group-focus-within:block z-30">
+                            class="absolute right-0 top-full mt-2 w-72 bg-white shadow-xl rounded hidden group-hover:block group-focus-within:block z-30">
                             {% if user.is_authenticated %}
                             <!-- Usuario logueado -->
                             <div class="p-4 border-b text-center">
@@ -128,7 +113,7 @@
                                     Inicia sesión en tu cuenta
                                 </h3>
                                 <a href="{% url 'iniciar_sesion' %}"
-                                    class="inline-block w-full py-3 bg-indigo-600 text-white rounded font-semibold hover:bg-indido-700 transition">
+                                    class="inline-block w-full py-3 bg-indigo-600 text-white rounded font-semibold hover:bg-indigo-700 transition">
                                     Entrar
                                 </a>
                                 <a href="{% url 'registrarse' %}"
@@ -159,11 +144,11 @@
         {% load categorias_menu %}
 
         <nav class="bg-indigo-700 text-white text-sm">
-        <ul class="max-w-7xl mx-auto flex overflow-x-visible whitespace-nowrap px-4 lg:px-8">
-            {% for categoria in categorias_menu %}
-            {% render_categoria categoria %}
-            {% endfor %}
-        </ul>
+            <ul class="max-w-7xl mx-auto flex overflow-x-visible whitespace-nowrap px-4 lg:px-8">
+                {% for categoria in categorias_menu %}
+                {% render_categoria categoria %}
+                {% endfor %}
+            </ul>
         </nav>
     </header>
 
@@ -174,45 +159,94 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-200">
-        <div class="max-w-7xl mx-auto px-4 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="bg-gray-900 text-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 py-12">
 
-            <div>
-                <h2 class="font-semibold mb-4">Quiénes Somos</h2>
-                <p class="text-sm leading-relaxed">
-                    En <strong>UlloaWear</strong> creamos prendas versátiles y atemporales
-                    para cada estilo de vida. Diseñamos y enviamos desde México con
-                    pasión por la moda sostenible.
-                </p>
+            <!-- Secciones de enlaces -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Atención al Cliente -->
+                <div>
+                    <h2 class="font-semibold mb-4">Atención al Cliente</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="{% url 'info_page' 'politica-devolucion' %}" class="hover:underline">Política de
+                                devolución</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'info_page' 'rastrear-pedido' %}" class="hover:underline">Rastrear
+                                pedido</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'info_page' 'envios-devoluciones' %}" class="hover:underline">Envíos y
+                                devoluciones</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'info_page' 'preguntas-frecuentes' %}" class="hover:underline">Preguntas
+                                frecuentes</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="font-semibold mb-4">Quiénes Somos</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="{% url 'info_page' 'nuestra-historia' %}" class="hover:underline">Nuestra
+                                historia</a></li>
+                        <li><a href="{% url 'info_page' 'sostenibilidad' %}" class="hover:underline">Sostenibilidad</a>
+                        </li>
+                        <li><a href="{% url 'info_page' 'trabaja-con-nosotros' %}" class="hover:underline">Trabaja con
+                                nosotros</a></li>
+                        <li><a href="{% url 'info_page' 'prensa' %}" class="hover:underline">Prensa</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="font-semibold mb-4">Otros Sitios</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="{% url 'info_page' 'marketplace' %}" class="hover:underline">Marketplace</a></li>
+                        <li><a href="{% url 'info_page' 'encuentra-tu-estilo' %}" class="hover:underline">Encuentra tu
+                                estilo</a></li>
+                        <li><a href="{% url 'info_page' 'app-movil' %}" class="hover:underline">App móvil</a></li>
+                        <li><a href="{% url 'info_page' 'blog' %}" class="hover:underline">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contáctanos y Redes -->
+                <div>
+                    <h3 class="font-semibold mb-4">Contáctanos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>Tel: <a href="tel:8711234567" class="hover:underline">871 123 4567</a></li>
+                        <li>Email: <a href="mailto:soporte@ulloawear.com"
+                                class="hover:underline">soporte@ulloawear.com</a></li>
+                    </ul>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.facebook.com/" class="hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="https://x.com/?lang=es" class="hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="https://www.instagram.com/" class="hover:text-white"><i
+                                data-feather="instagram"></i></a>
+                        <a href="https://www.youtube.com/" class="hover:text-white"><i data-feather="youtube"></i></a>
+                    </div>
+                </div>
             </div>
 
-            <div>
-                <h2 class="font-semibold mb-4">Atención al Cliente</h2>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:underline">Centro de ayuda</a></li>
-                    <li><a href="#" class="hover:underline">Envíos y devoluciones</a></li>
-                    <li><a href="#" class="hover:underline">Estado de mi pedido</a></li>
-                    <li><a href="#" class="hover:underline">Tarjetas de regalo</a></li>
-                </ul>
+            <!-- Separador -->
+            <div class="border-t border-gray-700 mt-8"></div>
+
+            <!-- Bottom bar -->
+            <div class="flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 pt-6">
+                <!-- Moneda / Idioma -->
+                <div class="space-x-4 mb-4 md:mb-0">
+                    <a href="#" class="hover:underline">USD | EN</a>
+                    <a href="#" class="hover:underline">Español</a>
+                </div>
+                <!-- Copyright -->
+                <div>© 2025 UlloaWear — Todos los derechos reservados</div>
+                <!-- Chat / Soporte rápido -->
+                <div>
+                    <a href="https://web.whatsapp.com/" class="hover:underline">Chat en vivo</a>
+                </div>
             </div>
 
-            <div>
-                <h2 class="font-semibold mb-4">Contáctanos</h2>
-                <ul class="space-y-2 text-sm">
-                    <li>Tel: 871&nbsp;123&nbsp;4567</li>
-                    <li>Email: soporte@ulloawear.com</li>
-                    <li class="flex space-x-4 mt-2">
-                        <a href="#"><i data-feather="facebook" class="w-5 h-5"></i></a>
-                        <a href="#"><i data-feather="twitter" class="w-5 h-5"></i></a>
-                        <a href="#"><i data-feather="instagram" class="w-5 h-5"></i></a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="bg-gray-800 text-center py-4 text-xs">
-            © 2025 UlloaWear – Todos los derechos reservados.
         </div>
     </footer>
 

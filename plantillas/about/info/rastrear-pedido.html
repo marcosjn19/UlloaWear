@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Rastrear pedido – UlloaWear{% endblock %}
+{% block content %}
+<div class="max-w-3xl mx-auto py-12 px-4">
+    <h1 class="text-3xl font-semibold mb-6">Rastrear pedido</h1>
+    <p class="text-gray-700 leading-relaxed">
+        Introduce tu número de pedido y nuestro sistema de seguimiento te mostrará el estado
+        actual de tu envío en tiempo real.
+    </p>
+    <form action="#" method="get" class="mt-6">
+        <label for="tracking" class="block text-sm font-medium text-gray-700">Número de pedido</label>
+        <input id="tracking" name="tracking" type="text" required
+            class="mt-1 w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="e.g. 12345ABCDE">
+        <button type="submit" class="mt-4 px-6 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
+            Rastrear
+        </button>
+    </form>
+</div>
+{% endblock %}
