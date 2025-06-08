@@ -62,3 +62,12 @@ def categoria(request, pk):
         'subcategorias': subcategorias,
         'productos': productos,
     })
+
+
+def buscar_producto(request):
+    query = request.GET.get('q', '')
+    productos = Producto.objects.filter(nombre__icontains=query)
+    return render(request, 'productos/busqueda.html', {
+        'query': query,
+        'productos': productos,
+    })
