@@ -1,0 +1,239 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Sostenibilidad – UlloaWear{% endblock %}
+{% block content %}
+<div class="bg-gray-50 min-h-screen">
+    <!-- Hero Section con Imagen -->
+    <div class="relative bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-6">Sostenibilidad</h1>
+                    <p class="text-xl text-indigo-100 leading-relaxed">
+                        Nuestro compromiso con el planeta va más allá de la moda. Descubre cómo creamos prendas responsables que cuidan el futuro.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="max-w-6xl mx-auto py-16 px-4">
+        <!-- Compromiso Principal -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestro Compromiso Verde</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="prose prose-lg mx-auto text-gray-700">
+                <p class="text-xl text-gray-600 mb-6 text-center">
+                    En UlloaWear utilizamos materiales reciclados y procesos de bajo impacto ambiental en cada etapa de producción.
+                </p>
+                
+                <p class="leading-relaxed mb-6">
+                    Nuestro compromiso es reducir la huella de carbono en cada paso de producción, desde la selección de materias primas hasta el empaque final. Creemos que la moda puede ser hermosa sin comprometer el bienestar de nuestro planeta.
+                </p>
+                
+                <p class="leading-relaxed">
+                    Cada decisión que tomamos considera el impacto ambiental a largo plazo, porque entendemos que la verdadera elegancia viene de la responsabilidad con las futuras generaciones.
+                </p>
+            </div>
+        </div>
+
+        <!-- Materiales Sostenibles -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Materiales Responsables</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Algodón Orgánico</h3>
+                    <p class="text-gray-600">Certificado y libre de pesticidas, cultivado con prácticas regenerativas que mejoran la salud del suelo.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2M9 3h6a2 2 0 012 2v12a4 4 0 01-4 4H9"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Tintes Ecológicos</h3>
+                    <p class="text-gray-600">Libres de sustancias tóxicas y metales pesados, usando colorantes naturales y procesos de agua limpia.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Empaque Reciclable</h3>
+                    <p class="text-gray-600">100% reciclable y compostable, usando materiales biodegradables para reducir residuos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceso Sostenible -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Proceso de Producción Verde</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Selección de Materiales</h3>
+                            <p class="text-gray-600">Evaluamos cada fibra considerando su impacto ambiental y social.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Producción Eficiente</h3>
+                            <p class="text-gray-600">Minimizamos el desperdicio de agua y energía en cada etapa.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Distribución Consciente</h3>
+                            <p class="text-gray-600">Optimizamos rutas de envío para reducir emisiones de carbono.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Empaque Responsable</h3>
+                            <p class="text-gray-600">Usamos materiales reciclados y biodegradables en todos nuestros empaques.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificaciones -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Certificaciones y Estándares</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Certificación GOTS (Global Organic Textile Standard)</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Estándar OEKO-TEX para textiles libres de tóxicos</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Cumplimiento con Fair Trade Standards</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Carbono neutral en toda la cadena de suministro</p>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 border-l-4 border-green-400 p-4 mt-6">
+                    <div class="flex">
+                        <svg class="w-5 h-5 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="ml-3">
+                            <p class="text-sm text-green-700">
+                                <strong>Compromiso 2025:</strong> Alcanzar el 100% de materiales renovables y cero residuos en producción.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Impacto Medible -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestro Impacto Medible</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">70%</div>
+                    <p class="text-gray-600">Reducción en uso de agua</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">50%</div>
+                    <p class="text-gray-600">Menos emisiones CO₂</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">100%</div>
+                    <p class="text-gray-600">Empaque reciclable</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">0</div>
+                    <p class="text-gray-600">Químicos tóxicos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Iniciativas Adicionales -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Iniciativas Ambientales</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Programa de Reciclaje</h3>
+                    <p class="text-gray-600 mb-4">Recibimos prendas usadas de cualquier marca para darles una segunda vida a través de programas de upcycling y reciclaje textil.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Reforestación</h3>
+                    <p class="text-gray-600 mb-4">Por cada compra plantamos un árbol en zonas deforestadas de México, contribuyendo a la regeneración de ecosistemas locales.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Educación Ambiental</h3>
+                    <p class="text-gray-600 mb-4">Compartimos conocimiento sobre moda sostenible a través de talleres y contenido educativo para crear conciencia.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Economía Circular</h3>
+                    <p class="text-gray-600 mb-4">Diseñamos productos pensando en su fin de vida útil, facilitando el reciclaje y la reutilización de materiales.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="bg-indigo-700 rounded-2xl p-8 text-white text-center">
+            <h2 class="text-2xl font-bold mb-4">Únete al Cambio Sostenible</h2>
+            <p class="text-indigo-100 mb-6">Cada compra es un voto por un planeta más saludable. Descubre nuestra colección responsable.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="{% url 'inicio' %}" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Ver Productos Sostenibles
+                </a>
+                <a href="{% url 'sobre' %}" class="bg-indigo-600 bg-opacity-50 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-70 transition-colors">
+                    Conoce Nuestro Impacto
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% block title %}Encuentra tu estilo – UlloaWear{% endblock %}
+
+{% block content %}
+<div class="bg-gray-50 min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-6">Encuentra Tu Estilo</h1>
+                    <p class="text-xl text-indigo-100 leading-relaxed">
+                        Responde unas preguntas rápidas y descubre las prendas que reflejan tu personalidad y valores.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-6xl mx-auto py-16 px-4">
+
+        <!-- Introducción al Test -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Moda Personalizada, Consumo Consciente</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="prose prose-lg mx-auto text-gray-700">
+                <p class="text-xl text-gray-600 mb-6 text-center">
+                    Nuestro test de estilo analiza tus preferencias y valores para recomendarte colecciones que encajen contigo y con la filosofía sostenible de UlloaWear.
+                </p>
+
+                <p class="leading-relaxed mb-6">
+                    Con preguntas sencillas sobre tus colores favoritos, actividades diarias y prioridades al elegir ropa, generamos un perfil único que inspira outfits adaptados a tu ritmo de vida. Olvídate de las compras impulsivas y elige prendas que amarás y usarás una y otra vez.
+                </p>
+
+                <p class="leading-relaxed text-center font-semibold">
+                    ¿Listo para descubrir tu esencia en cada pieza?
+                </p>
+
+                <div class="flex justify-center mt-8">
+                    <a href="#" class="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+                        Empezar Test de Estilo
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Perfiles de Estilo -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Perfiles de Estilo</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="star" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Minimalista</h3>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="feather" class="w-8 h-8 text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Bohemio</h3>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="activity" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Deportivo</h3>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="award" class="w-8 h-8 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Elegante</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo Funciona -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Cómo Funciona?</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-orange-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Responde</h3>
+                    <p class="text-gray-600">Completa el cuestionario rápido sobre tus gustos y rutinas.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Analizamos</h3>
+                    <p class="text-gray-600">Generamos tu perfil con ayuda de nuestros expertos en moda sostenible.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-green-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Descubre</h3>
+                    <p class="text-gray-600">Recibe recomendaciones personalizadas y empieza a vestir tu esencia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Beneficios del Test de Estilo</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="space-y-4 max-w-2xl mx-auto">
+                <div class="flex items-start space-x-3">
+                    <i data-feather="smile" class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0"></i>
+                    <p class="text-gray-700">Compra con confianza prendas que realmente amarás.</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <i data-feather="check-circle" class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0"></i>
+                    <p class="text-gray-700">Recomendaciones alineadas con prácticas sostenibles.</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <i data-feather="clock" class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0"></i>
+                    <p class="text-gray-700">Ahorra tiempo evitando búsquedas interminables.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Preguntas Frecuentes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Cuánto tiempo dura el test?</h3>
+                    <p class="text-gray-600 mb-4">Entre 3 y 5 minutos, perfecto para hacerlo desde tu móvil.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Puedo repetirlo?</h3>
+                    <p class="text-gray-600 mb-4">¡Claro! Si cambias de gustos o temporada, puedes realizarlo de nuevo y obtener recomendaciones frescas.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Tiene costo?</h3>
+                    <p class="text-gray-600 mb-4">Es totalmente gratuito y sin compromisos de compra.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Cómo se protege mi información?</h3>
+                    <p class="text-gray-600 mb-4">Usamos tus respuestas solo para generar recomendaciones; no compartimos datos personales con terceros.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="bg-indigo-700 rounded-2xl p-8 text-white text-center">
+            <h2 class="text-2xl font-bold mb-4">Exprésate a Través de Tu Ropa</h2>
+            <p class="text-indigo-100 mb-6">Da el primer paso hacia un armario consciente y coherente contigo.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Empezar Test de Estilo
+                </a>
+                <a href="{% url 'info_page' 'marketplace' %}" class="bg-indigo-600 bg-opacity-50 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-70 transition-colors">
+                    Ver Recomendaciones
+                </a>
+            </div>
+        </section>
+    </main>
+</div>
+{% endblock %}
