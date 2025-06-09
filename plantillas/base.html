@@ -1,223 +1,217 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-<style>
-  .star:hover ~ .star {
-    color: #9CA3AF; /* gris */
-  }
-  .star.text-yellow-500 ~ .star {
-    color: #FBBF24; /* amarillo */
-  }
-</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Inicio – UlloaWear{% endblock %}</title>
 
-    <!-- Tailwind CSS vía CDN (desarrollo) -->
+    <!-- Tailwind (desarrollo) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- CSS personalizado (opcional) -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 
-<body class="flex min-h-screen flex-col text-gray-800">
+<body class="flex min-h-screen flex-col text-gray-800 bg-gray-50">
 
-    <!-- Barra superior informativa -->
-    <div class="hidden lg:flex justify-between items-center text-xs bg-gray-100 px-4 py-1">
-        <div class="space-x-4">
-            <a href="#" class="hover:underline">Blog de Estilo</a>
-            <a href="#" class="hover:underline">Guía de Tallas</a>
-            <a href="#" class="hover:underline">Sobre UlloaWear</a>
-        </div>
-        <div class="space-x-4">
-            <span class="font-medium">Moda confiable desde 2025</span>
-            <span class="hidden md:inline">871&nbsp;123&nbsp;4567</span>
-            <a href="#" class="hover:underline">Ayuda</a>
-            <a href="#" class="hover:underline">Chat en vivo</a>
-        </div>
+    <!-- Barra superior -->
+    <div class="hidden lg:flex justify-between items-center text-[11px] tracking-wide bg-[#101827] text-gray-200 px-6 py-1.5">
+        <span class="font-medium">Moda confiable desde 2025</span>
+        <nav class="space-x-6">
+            <a href="{% url 'sobre' %}" class="hover:text-white transition-colors">Sobre&nbsp;UlloaWear</a>
+            <a href="{% url 'ayuda' %}" class="hover:text-white transition-colors">Ayuda</a>
+        </nav>
     </div>
 
-    <!-- Navbar principal -->
-    <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto px-4 lg:px-8">
-            <div class="flex items-center justify-between h-16">
+    <!-- Header / Navbar principal -->
+    <header class="bg-white/80 backdrop-blur shadow-sm sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto flex items-center justify-between h-24 px-4 lg:px-8">
 
-                <!-- Logo -->
-                <a href="{% url 'inicio' %}" class="flex items-center space-x-2">
-                    <!-- Sustituye por tu logo real -->
-                    <img src="{% static 'images/ulloa_wear_logo.png' %}" alt="UlloaWear" class="h-20 w-auto">
-                    <span class="sr-only">Inicio</span>
+            <!-- Logo -->
+            <a href="{% url 'inicio' %}" class="flex items-center group">
+                <img src="{% static 'images/ulloa_wear_logo.png' %}"
+                     alt="UlloaWear"
+                     class="h-16 w-auto transition-transform duration-200 group-hover:scale-105">
+                <span class="sr-only">Inicio</span>
+            </a>
+
+            <!-- Buscador -->
+            <form action="{% url 'buscar_producto' %}" method="get" class="flex-1 max-w-lg mx-8 relative">
+                <input
+                    type="text"
+                    name="q"
+                    placeholder="Buscar productos"
+                    class="peer w-full rounded-full border border-gray-300 py-3 pl-5 pr-12 text-sm placeholder-gray-400
+                           focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600
+                           bg-white/70 backdrop-blur-sm">
+                <button type="submit"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-indigo-600">
+                    <i data-feather="search" class="w-5 h-5"></i>
+                </button>
+            </form>
+
+            <!-- Iconos cuenta / carrito -->
+            <div class="flex items-center space-x-10 text-[11px] font-medium">
+
+                <!-- Flash Sale (placeholder) -->
+                <a href="#" class="hidden lg:flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                    <i data-feather="zap" class="w-6 h-6 mb-0.5"></i>
+                    Flash&nbsp;Sale
                 </a>
 
-                <!-- Teléfono y asesor (opcional) -->
-                <div class="hidden xl:flex items-center space-x-1 text-sm">
-                    <i data-feather="user" class="w-4 h-4"></i>
-                    <span>Asesores</span>
-                    <span>871&nbsp;123&nbsp;4567</span>
-                    <i data-feather="chevron-down" class="w-4 h-4"></i>
-                </div>
+                <!-- Mi Cuenta -->
+                <div class="relative group">
+                    <button class="flex flex-col items-center text-gray-500 hover:text-indigo-600 focus:outline-none">
+                        <i data-feather="user" class="w-6 h-6 mb-0.5"></i>
+                        {% if user.is_authenticated %}
+                            {{ user.nombre|default:user.usuario }}
+                        {% else %}
+                            Mi&nbsp;Cuenta
+                        {% endif %}
+                    </button>
 
-                <!-- Buscador -->
-                <div class="flex-1 mx-4">
-                    <form action="{% url 'buscar_producto' %}" method="get">
-                        <label class="relative w-full">
-                            <input type="text" name="q" placeholder="Buscar productos"
-                                class="w-full border rounded-full py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-indigo-600">
-                            <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2">
-                                <i data-feather="search" class="w-5 h-5"></i>
-                            </button>
-                        </label>
-                    </form>
-                </div>
+                    <div
+                        class="absolute right-0 mt-3 w-72 rounded-lg shadow-xl bg-white ring-1 ring-gray-200
+                               opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
+                               transition-all origin-top-right z-30">
 
-                <!-- Cuenta y carrito -->
-                <div class="flex items-center space-x-8">
-
-                    <!-- Sección de ofertas relámpago (placeholder) -->
-                    <div class="hidden lg:flex flex-col items-center text-xs">
-                        <i data-feather="zap" class="w-6 h-6"></i>
-                        <span>Flash&nbsp;Sale</span>
-                    </div>
-
-                    <!-- CUENTA: contenedor -->
-                    <div class="relative group">
-                        <!-- Botón / icono -->
-                        <a href="" class="flex flex-col items-center text-xs focus:outline-none">
-                            <i data-feather="user" class="w-6 h-6"></i>
-                            {% if user.is_authenticated %}
-                            <span>{{ user.nombre|default:user.usuario }}</span>
-                            {% else %}
-                            <span>Mi&nbsp;Cuenta</span>
-                            {% endif %}
-                        </a>
-
-                        <!-- Desplegable -->
-                        <div
-                            class="absolute right-0 mt-2 w-72 bg-white shadow-xl rounded hidden group-hover:block group-focus-within:block z-30">
-                            {% if user.is_authenticated %}
-                            <!-- Usuario logueado -->
-                            <div class="p-4 border-b text-center">
-                                <p class="text-sm font-medium text-gray-700">
-                                    ¡Hola, {{ user.nombre|default:user.usuario }}!
-                                </p>
+                        {% if user.is_authenticated %}
+                            <div class="px-5 py-4 border-b text-center">
+                                <p class="text-sm text-gray-700">¡Hola, {{ user.nombre|default:user.usuario }}!</p>
                             </div>
-                            <ul class="grid grid-cols-3 text-center text-xs">
-                                <li class="p-4 hover:bg-gray-50">
-                                    <a href="{% url 'editar_perfil' %}" class="flex flex-col items-center text-xs">
-                                        <i data-feather="user" class="mx-auto mb-1 w-6 h-6"></i>
-                                        <span class="block">Mi perfil</span>
+                            <ul class="grid grid-cols-3 divide-x">
+                                <li class="py-4 hover:bg-gray-50">
+                                    <a href="{% url 'editar_perfil' %}"
+                                       class="flex flex-col items-center text-xs text-gray-600 hover:text-indigo-600">
+                                        <i data-feather="user" class="w-5 h-5 mb-1"></i>Perfil
                                     </a>
                                 </li>
-                                <li class="p-4 hover:bg-gray-50">
-                                    <i data-feather="truck" class="mx-auto mb-1 w-6 h-6"></i>
-                                    <span class="block">Mis pedidos</span>
+                                <li class="py-4 hover:bg-gray-50">
+                                    <a href="#"
+                                       class="flex flex-col items-center text-xs text-gray-600 hover:text-indigo-600">
+                                        <i data-feather="truck" class="w-5 h-5 mb-1"></i>Pedidos
+                                    </a>
                                 </li>
-                                <li class="p-4 hover:bg-gray-50">
-                                    <i data-feather="star" class="mx-auto mb-1 w-6 h-6"></i>
-                                    <span class="block">Favoritos</span>
+                                <li class="py-4 hover:bg-gray-50">
+                                    <a href="#"
+                                       class="flex flex-col items-center text-xs text-gray-600 hover:text-indigo-600">
+                                        <i data-feather="star" class="w-5 h-5 mb-1"></i>Favoritos
+                                    </a>
                                 </li>
                             </ul>
                             <a href="{% url 'cerrar_sesion' %}"
-                                class="block text-center text-red-600 py-3 hover:bg-gray-50">
+                               class="block w-full text-center py-3 text-red-600 hover:bg-gray-50 text-sm">
                                 Cerrar sesión
                             </a>
-                            {% else %}
-                            <!-- Invitado -->
+                        {% else %}
                             <div class="p-6 text-center">
-                                <h3 class="text-lg font-medium text-gray-600 mb-6">
-                                    Inicia sesión en tu cuenta
-                                </h3>
+                                <h3 class="text-sm font-medium text-gray-700 mb-4">Inicia sesión en tu cuenta</h3>
                                 <a href="{% url 'iniciar_sesion' %}"
-                                    class="inline-block w-full py-3 bg-indigo-600 text-white rounded font-semibold hover:bg-indido-700 transition">
-                                    Entrar
-                                </a>
+                                   class="block w-full py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700
+                                          transition font-semibold text-sm">Entrar</a>
                                 <a href="{% url 'registrarse' %}"
-                                    class="inline-block w-full mt-4 py-3 border border-indigo-600 text-indigo-600 rounded font-semibold hover:bg-indigo-50 transition">
-                                    Crear cuenta
-                                </a>
+                                   class="block w-full mt-3 py-2.5 border border-indigo-600 text-indigo-600 rounded-lg
+                                          hover:bg-indigo-50 transition font-semibold text-sm">Crear cuenta</a>
                             </div>
-                            {% endif %}
-                        </div>
+                        {% endif %}
                     </div>
+                </div>
 
-                    <!-- Carrito -->
-                    <a href="" class="relative flex flex-col items-center text-xs">
-                        <i data-feather="shopping-cart" class="w-6 h-6"></i>
-                        <span>Carrito</span>
-                        {% if cart_count %}
+                <!-- Carrito -->
+                <a href="#"
+                   class="relative flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                    <i data-feather="shopping-cart" class="w-6 h-6 mb-0.5"></i>
+                    Carrito
+                    {% if cart_count %}
                         <span
-                            class="absolute -top-1 -right-2 bg-indigo-600 text-white text-[10px] rounded-full px-[5px]">
+                            class="absolute -top-1 -right-3 text-[10px] bg-indigo-600 text-white rounded-full px-[5px] font-semibold">
                             {{ cart_count }}
                         </span>
-                        {% endif %}
-                    </a>
-                </div>
+                    {% endif %}
+                </a>
             </div>
         </div>
 
-        <!-- Menú secundario con submenús desplegables -->
+        <!-- Menú de categorías (omfg) -->
         {% load categorias_menu %}
-
-        <nav class="bg-indigo-700 text-white text-sm">
-        <ul class="max-w-7xl mx-auto flex overflow-x-visible whitespace-nowrap px-4 lg:px-8">
-            {% for categoria in categorias_menu %}
-            {% render_categoria categoria %}
-            {% endfor %}
-        </ul>
+        <nav class="bg-indigo-900 text-white text-sm shadow-md">
+            <ul class="flex justify-center space-x-6 px-4 py-3">
+                {% for categoria in categorias_menu %}
+                    {% render_categoria categoria %}
+                {% endfor %}
+            </ul>
         </nav>
     </header>
 
-    <!-- Contenido principal -->
+    <!-- Contenido -->
     <main class="flex-1">
-        {% block content %}
-        {% endblock content %}
+        {% block content %}{% endblock %}
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-200">
-        <div class="max-w-7xl mx-auto px-4 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="bg-[#101827] text-gray-300 pt-14 pb-10">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
 
-            <div>
-                <h2 class="font-semibold mb-4">Quiénes Somos</h2>
-                <p class="text-sm leading-relaxed">
-                    En <strong>UlloaWear</strong> creamos prendas versátiles y atemporales
-                    para cada estilo de vida. Diseñamos y enviamos desde México con
-                    pasión por la moda sostenible.
-                </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-sm">
+                <div>
+                    <h3 class="uppercase font-semibold tracking-wider text-gray-100 mb-4">Atención al Cliente</h3>
+                    <ul class="space-y-2">
+                        <li><a href="{% url 'info_page' 'politica-devolucion' %}" class="hover:text-white">Política de devolución</a></li>
+                        <li><a href="{% url 'info_page' 'rastrear-pedido' %}"    class="hover:text-white">Rastrear pedido</a></li>
+                        <li><a href="{% url 'info_page' 'envios-devoluciones' %}" class="hover:text-white">Envíos y devoluciones</a></li>
+                        <li><a href="{% url 'info_page' 'preguntas-frecuentes' %}" class="hover:text-white">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="uppercase font-semibold tracking-wider text-gray-100 mb-4">Quiénes Somos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="{% url 'info_page' 'nuestra-historia' %}"      class="hover:text-white">Nuestra historia</a></li>
+                        <li><a href="{% url 'info_page' 'sostenibilidad' %}"        class="hover:text-white">Sostenibilidad</a></li>
+                        <li><a href="{% url 'info_page' 'trabaja-con-nosotros' %}"  class="hover:text-white">Trabaja con nosotros</a></li>
+                        <li><a href="{% url 'info_page' 'prensa' %}"                class="hover:text-white">Prensa</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="uppercase font-semibold tracking-wider text-gray-100 mb-4">Otros Sitios</h3>
+                    <ul class="space-y-2">
+                        <li><a href="{% url 'info_page' 'marketplace' %}"           class="hover:text-white">Marketplace</a></li>
+                        <li><a href="{% url 'info_page' 'encuentra-tu-estilo' %}"    class="hover:text-white">Encuentra tu estilo</a></li>
+                        <li><a href="{% url 'info_page' 'app-movil' %}"              class="hover:text-white">App móvil</a></li>
+                        <li><a href="{% url 'info_page' 'blog' %}"                   class="hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="uppercase font-semibold tracking-wider text-gray-100 mb-4">Contáctanos</h3>
+                    <ul class="space-y-2">
+                        <li>Tel: <a href="tel:8711234567" class="hover:text-white">871&nbsp;123&nbsp;4567</a></li>
+                        <li>Email: <a href="mailto:soporte@ulloawear.com" class="hover:text-white">soporte@ulloawear.com</a></li>
+                    </ul>
+                    <div class="flex space-x-4 mt-6 text-gray-400">
+                        <a href="#" class="hover:text-white"><i data-feather="facebook"  class="w-5 h-5"></i></a>
+                        <a href="#" class="hover:text-white"><i data-feather="twitter"   class="w-5 h-5"></i></a>
+                        <a href="#" class="hover:text-white"><i data-feather="instagram" class="w-5 h-5"></i></a>
+                        <a href="#" class="hover:text-white"><i data-feather="youtube"   class="w-5 h-5"></i></a>
+                    </div>
+                </div>
             </div>
 
-            <div>
-                <h2 class="font-semibold mb-4">Atención al Cliente</h2>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:underline">Centro de ayuda</a></li>
-                    <li><a href="#" class="hover:underline">Envíos y devoluciones</a></li>
-                    <li><a href="#" class="hover:underline">Estado de mi pedido</a></li>
-                    <li><a href="#" class="hover:underline">Tarjetas de regalo</a></li>
-                </ul>
+            <div class="border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500">
+                <div class="mb-4 md:mb-0 space-x-4">
+                    <a href="#" class="hover:text-gray-300">USD | EN</a>
+                    <a href="#" class="hover:text-gray-300">Español</a>
+                </div>
+                <p class="mb-4 md:mb-0">© 2025 UlloaWear &mdash; Todos los derechos reservados</p>
+                <a href="https://web.whatsapp.com/" class="hover:text-gray-300">Chat en vivo</a>
             </div>
-
-            <div>
-                <h2 class="font-semibold mb-4">Contáctanos</h2>
-                <ul class="space-y-2 text-sm">
-                    <li>Tel: 871&nbsp;123&nbsp;4567</li>
-                    <li>Email: soporte@ulloawear.com</li>
-                    <li class="flex space-x-4 mt-2">
-                        <a href="#"><i data-feather="facebook" class="w-5 h-5"></i></a>
-                        <a href="#"><i data-feather="twitter" class="w-5 h-5"></i></a>
-                        <a href="#"><i data-feather="instagram" class="w-5 h-5"></i></a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="bg-gray-800 text-center py-4 text-xs">
-            © 2025 UlloaWear – Todos los derechos reservados.
         </div>
     </footer>
 
-    <!-- Activar iconos -->
-    <script>feather.replace()</script>
+    <script>feather.replace();</script>
 </body>
-
 </html>

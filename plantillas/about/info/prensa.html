@@ -1,0 +1,308 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Prensa – UlloaWear{% endblock %}
+{% block content %}
+<div class="bg-gray-50 min-h-screen">
+    <!-- Hero Section -->
+    <div class="relative bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-6">Prensa y Medios</h1>
+                    <p class="text-xl text-indigo-100 leading-relaxed">
+                        Conectamos con medios de comunicación para compartir nuestra historia de moda sostenible e innovación textil.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="max-w-6xl mx-auto py-16 px-4">
+        <!-- Acerca de UlloaWear -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestra Historia</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="prose prose-lg mx-auto text-gray-700">
+                <p class="text-xl text-gray-600 mb-6 text-center">
+                    UlloaWear es más que una marca de ropa, somos pioneros en la revolución de la moda sostenible.
+                </p>
+                
+                <p class="leading-relaxed mb-6">
+                    Fundada con la visión de transformar la industria textil, UlloaWear combina diseño innovador con prácticas sostenibles. Desde nuestros inicios en Torreón, Coahuila, hemos trabajado incansablemente para crear ropa que no solo se ve bien, sino que también hace el bien al planeta.
+                </p>
+                
+                <p class="leading-relaxed">
+                    Nuestro compromiso con la sostenibilidad, la calidad artesanal y la responsabilidad social nos ha posicionado como líderes del cambio en la industria de la moda mexicana.
+                </p>
+            </div>
+        </div>
+
+        <!-- Kit de Prensa -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Kit de Prensa</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Comunicados</h3>
+                    <p class="text-gray-600 mb-4">Notas de prensa oficiales, lanzamientos de productos y actualizaciones corporativas.</p>
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium">
+                        Descargar
+                    </button>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Imágenes HD</h3>
+                    <p class="text-gray-600 mb-4">Fotografías profesionales de productos, instalaciones y equipo directivo en alta resolución.</p>
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium">
+                        Galería
+                    </button>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Logos y Marca</h3>
+                    <p class="text-gray-600 mb-4">Logotipos oficiales, guías de marca y elementos gráficos para uso editorial.</p>
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium">
+                        Recursos
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Noticias Recientes -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Noticias Recientes</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Noticia 1 -->
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                        <div class="flex-1">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Sostenibilidad</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">15 Mayo 2025</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">UlloaWear Presenta Nueva Colección 100% Orgánica</h3>
+                            <p class="text-gray-600 mb-3">
+                                Lanzamos nuestra línea más sostenible hasta la fecha, utilizando únicamente materiales certificados orgánicos y procesos de producción carbono neutral.
+                            </p>
+                        </div>
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium mt-4 md:mt-0 md:ml-4">
+                            Leer Más
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Noticia 2 -->
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                        <div class="flex-1">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Expansión</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">8 Mayo 2025</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Apertura de Nueva Planta de Producción en Coahuila</h3>
+                            <p class="text-gray-600 mb-3">
+                                Inauguramos nuestras instalaciones de 5,000 m² que generarán 200 empleos directos, consolidando nuestro compromiso con la región.
+                            </p>
+                        </div>
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium mt-4 md:mt-0 md:ml-4">
+                            Leer Más
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Noticia 3 -->
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                        <div class="flex-1">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Reconocimiento</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">1 Mayo 2025</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Premio Nacional de Moda Sostenible 2025</h3>
+                            <p class="text-gray-600 mb-3">
+                                UlloaWear recibe el galardón por su innovación en procesos textiles ecológicos y compromiso con el comercio justo.
+                            </p>
+                        </div>
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium mt-4 md:mt-0 md:ml-4">
+                            Leer Más
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información de Contacto y Proceso -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Contacto de Prensa</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Email Principal</h3>
+                            <a href="mailto:prensa@ulloawear.com" class="text-indigo-600 hover:underline">prensa@ulloawear.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Ubicación</h3>
+                            <p class="text-gray-600">Torreón, Coahuila, México</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Tiempo de Respuesta</h3>
+                            <p class="text-gray-600">24-48 horas hábiles</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Responsable</h3>
+                            <p class="text-gray-600">Departamento de Comunicaciones</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicios para Medios -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Servicios para Medios</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Entrevistas con directivos y fundadores</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Tours por nuestras instalaciones de producción</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Sesiones fotográficas y material audiovisual</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Información exclusiva sobre lanzamientos</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="text-gray-700">Acceso a datos y estadísticas corporativas</p>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 border-l-4 border-indigo-400 p-4 mt-6">
+                    <div class="flex">
+                        <svg class="w-5 h-5 text-indigo-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="ml-3">
+                            <p class="text-sm text-indigo-700">
+                                <strong>Nota:</strong> Todos los materiales están disponibles para uso editorial. Para colaboraciones comerciales, contactar por separado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Prensa -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Preguntas Frecuentes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Ofrecen muestras de producto?</h3>
+                    <p class="text-gray-600 mb-4">Sí, proporcionamos muestras de productos para reseñas editoriales legítimas. Contacta a nuestro equipo de prensa.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Tienen portavoces disponibles?</h3>
+                    <p class="text-gray-600 mb-4">Nuestros fundadores y expertos en sostenibilidad están disponibles para entrevistas con previa coordinación.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Cuándo publican comunicados?</h3>
+                    <p class="text-gray-600 mb-4">Publicamos comunicados de prensa para lanzamientos importantes, expansiones y hitos corporativos relevantes.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Participan en eventos de prensa?</h3>
+                    <p class="text-gray-600 mb-4">Regularmente participamos en ferias de moda, eventos de sostenibilidad y conferencias de la industria textil.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="bg-indigo-700 rounded-2xl p-8 text-white text-center">
+            <h2 class="text-2xl font-bold mb-4">¿Tienes una Historia que Contar?</h2>
+            <p class="text-indigo-100 mb-6">Estamos aquí para ayudarte con información, entrevistas y recursos para tu cobertura mediática.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:prensa@ulloawear.com" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Contactar Prensa
+                </a>
+                <a href="{% url 'sobre' %}" class="bg-indigo-600 bg-opacity-50 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-70 transition-colors">
+                    Conoce Nuestra Historia
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,25 +1,26 @@
 {% load categorias_menu %}
+
 <li class="relative group">
   <a href="{{ categoria.get_absolute_url }}"
      class="block py-2 px-4 hover:bg-indigo-800 whitespace-nowrap font-medium text-sm text-white">
     {{ categoria.nombre }}
   </a>
 
-  {% if categoria.subcategorias.all %}
-    <ul class="absolute top-full left-0 mt-0 bg-white text-gray-800 shadow-lg group-hover:block group-focus-within:block z-20 min-w-[220px] hidden">
+  {% if categoria.subcategorias.exists %}
+    <ul class="absolute top-full left-0 hidden group-hover:block group-focus-within:block bg-white text-gray-800 shadow-lg z-20 min-w-[220px]">
       {% for subcat in categoria.subcategorias.all %}
-        <li class="group relative">
+        <li class="relative group">
           <a href="{{ subcat.get_absolute_url }}"
-             class="block py-2 pl-6 pr-4 hover:bg-gray-100 text-sm text-gray-800 whitespace-nowrap">
+             class="block py-2 px-4 hover:bg-gray-100 text-sm text-gray-800 whitespace-nowrap">
             {{ subcat.nombre }}
           </a>
 
-          {% if subcat.subcategorias.all %}
-            <ul class="absolute top-0 left-full mt-0 bg-white text-gray-800 shadow-lg z-20 hidden group-hover:block group-focus-within:block min-w-[200px]">
+          {% if subcat.subcategorias.exists %}
+            <ul class="absolute top-0 left-full hidden group-hover:block group-focus-within:block bg-white text-gray-800 shadow-lg z-30 min-w-[200px]">
               {% for subsub in subcat.subcategorias.all %}
                 <li>
                   <a href="{{ subsub.get_absolute_url }}"
-                     class="block py-2 pl-8 pr-4 hover:bg-gray-100 text-sm text-gray-800 whitespace-nowrap">
+                     class="block py-2 px-4 hover:bg-gray-100 text-sm text-gray-800 whitespace-nowrap">
                     {{ subsub.nombre }}
                   </a>
                 </li>

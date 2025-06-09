@@ -1,0 +1,13 @@
+<a href="{{ producto.get_url }}" class="bg-white rounded-xl shadow hover:shadow-md transition block">
+  {% if producto.imagenes %}
+    <img src="{{ producto.imagenes.url }}" alt="{{ producto.nombre }}" class="w-full h-48 object-cover rounded-t-xl">
+  {% else %}
+    <div class="w-full h-48 bg-gray-200 rounded-t-xl flex items-center justify-center text-gray-400">
+      Sin imagen
+    </div>
+  {% endif %}
+  <div class="p-4">
+    <h2 class="text-lg font-semibold text-gray-800">{{ producto.nombre }}</h2>
+    <p class="text-sm text-gray-500 mt-1">${{ producto.precio }}</p>
+  </div>
+</a>

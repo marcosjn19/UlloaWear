@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% block title %}Marketplace – UlloaWear{% endblock %}
+
+{% block content %}
+<div class="bg-gray-50 min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-6">Marketplace UlloaWear</h1>
+                    <p class="text-xl text-indigo-100 leading-relaxed">
+                        Conecta con diseñadores independientes y marcas aliadas que comparten nuestra visión de moda sostenible.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-6xl mx-auto py-16 px-4">
+
+        <!-- Acerca del Marketplace -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Explora, Conecta y Compra</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="prose prose-lg mx-auto text-gray-700">
+                <p class="text-xl text-gray-600 mb-6 text-center">
+                    Nuestro Marketplace reúne propuestas únicas de moda ética y responsable, cuidando cada detalle para que tu experiencia sea excepcional.
+                </p>
+
+                <p class="leading-relaxed mb-6">
+                    Desde accesorios artesanales hasta prendas de autor, aquí encontrarás colecciones exclusivas creadas por talentos emergentes y firmas consolidadas que comparten nuestros valores de sostenibilidad. Cada artículo cuenta una historia de innovación, respeto al medio ambiente y compromiso social.
+                </p>
+
+                <p class="leading-relaxed">
+                    Comparte tu pasión por la moda consciente: descubre productos, apoya a creadores locales y únete al movimiento de consumo responsable con UlloaWear.
+                </p>
+            </div>
+        </section>
+
+        <!-- Categorías Populares -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Categorías Populares</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Categoría -->
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="user" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Prendas</h3>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="watch" class="w-8 h-8 text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Accesorios</h3>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="shopping-bag" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Calzado</h3>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="home" class="w-8 h-8 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Hogar & Lifestyle</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vendedores Destacados -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Vendedores Destacados</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {% for i in "123" %}
+                <article class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="bg-indigo-100 w-24 h-24 rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="award" class="w-10 h-10 text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1">Marca {{ i }}</h3>
+                        <p class="text-gray-600 mb-4">Diseños artesanales con materiales reciclados y procesos zero-waste.</p>
+                        <a href="#" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium">
+                            Ver Tienda
+                        </a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Cómo Funciona -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Cómo Funciona?</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-orange-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Explora</h3>
+                    <p class="text-gray-600">Navega por categorías y descubre productos únicos.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Compra</h3>
+                    <p class="text-gray-600">Añade tus favoritos al carrito y paga de forma segura.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-green-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Recibe</h3>
+                    <p class="text-gray-600">Disfruta de envíos responsables y seguimiento en tiempo real.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Beneficios de Comprar Aquí</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="space-y-4 max-w-2xl mx-auto">
+                <div class="flex items-start space-x-3">
+                    <i data-feather="heart" class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0"></i>
+                    <p class="text-gray-700">Apoyas a talento local y producción ética.</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <i data-feather="eye" class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0"></i>
+                    <p class="text-gray-700">Transparencia total en materiales y procesos.</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <i data-feather="box" class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0"></i>
+                    <p class="text-gray-700">Envíos carbono-neutral y empaques reciclables.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Marketplace -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Preguntas Frecuentes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Cómo compro un producto?</h3>
+                    <p class="text-gray-600 mb-4">Añade el artículo al carrito, completa tus datos de envío y selecciona tu método de pago favorito.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Cuál es la política de devoluciones?</h3>
+                    <p class="text-gray-600 mb-4">Cuentas con 30 días para solicitar cambios o devoluciones. Consulta nuestra política para más detalles.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Puedo vender mis productos aquí?</h3>
+                    <p class="text-gray-600 mb-4">Sí, envíanos tu portafolio y cuéntanos tu propuesta. Nuestro equipo revisará tu solicitud y se pondrá en contacto.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Los envíos son internacionales?</h3>
+                    <p class="text-gray-600 mb-4">Actualmente enviamos a México y Estados Unidos. Próximamente ampliaremos destinos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-indigo-700 rounded-2xl p-8 text-white text-center">
+            <h2 class="text-2xl font-bold mb-4">Descubre Moda Con Propósito</h2>
+            <p class="text-indigo-100 mb-6">Únete a nuestra comunidad y apoya el talento que transforma la industria.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Ir al Marketplace
+                </a>
+                <a href="mailto:alianzas@ulloawear.com" class="bg-indigo-600 bg-opacity-50 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-70 transition-colors">
+                    Quiero Vender
+                </a>
+            </div>
+        </section>
+    </main>
+</div>
+{% endblock %}

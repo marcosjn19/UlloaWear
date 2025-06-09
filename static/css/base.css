@@ -1,0 +1,9 @@
+.star:hover~.star {
+    color: #9CA3AF;
+    /* gris */
+}
+
+.star.text-yellow-500~.star {
+    color: #FBBF24;
+    /* amarillo */
+}

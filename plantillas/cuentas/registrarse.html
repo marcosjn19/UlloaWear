@@ -6,26 +6,82 @@
 {% block content %}
 <div class="max-w-md mx-auto py-12">
     <h1 class="text-2xl font-semibold text-center mb-8">Crear cuenta</h1>
-    <form method="post" class="space-y-6">
+    <form method="post" class="space-y-6 bg-white p-8 rounded-lg shadow-md">
         {% csrf_token %}
         {{ form.non_field_errors }}
-        <div class="grid gap-4">
-            {{ form.nombre.label_tag }}{{ form.nombre }}
-            {{ form.apellido.label_tag }}{{ form.apellido }}
-            {{ form.telefono.label_tag }}{{ form.telefono }}
-            {{ form.email.label_tag }}{{ form.email }}
-            {{ form.usuario.label_tag }}{{ form.usuario }} {# nuevo campo #}
-            {{ form.contraseña.label_tag }}{{ form.contraseña }}
-            {{ form.confirmar_contraseña.label_tag }}{{ form.confirmar_contraseña }}
+
+        <div class="space-y-4">
+            <div>
+                {{ form.nombre.label_tag }}
+                {{ form.nombre }}
+            </div>
+            <div>
+                {{ form.apellido.label_tag }}
+                {{ form.apellido }}
+            </div>
+            <div>
+                {{ form.telefono.label_tag }}
+                {{ form.telefono }}
+            </div>
+            <div>
+                {{ form.email.label_tag }}
+                {{ form.email }}
+                {% for err in form.email.errors %}
+                <p class="text-red-600 text-sm mt-1">{{ err }}</p>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.usuario.label_tag }}
+                {{ form.usuario }}
+            </div>
+
+            <!-- Contraseña -->
+            <div>
+                {{ form.contraseña.label_tag }}
+                <div class="relative">
+                    {{ form.contraseña }}
+                    <button type="button" id="togglePass1"
+                        class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700">
+                        <svg data-feather="eye" class="open-icon h-5 w-5"></svg>
+                        <svg data-feather="eye-off" class="close-icon hidden h-5 w-5"></svg>
+                    </button>
+                </div>
+                {% for err in form.contraseña.errors %}
+                <p class="text-red-600 text-sm mt-1">{{ err }}</p>
+                {% endfor %}
+            </div>
+
+            <!-- Confirmar contraseña -->
+            <div>
+                {{ form.confirmar_contraseña.label_tag }}
+                <div class="relative">
+                    {{ form.confirmar_contraseña }}
+                    <button type="button" id="togglePass2"
+                        class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700">
+                        <svg data-feather="eye" class="open-icon h-5 w-5"></svg>
+                        <svg data-feather="eye-off" class="close-icon hidden h-5 w-5"></svg>
+                    </button>
+                </div>
+                {% for err in form.confirmar_contraseña.errors %}
+                <p class="text-red-600 text-sm mt-1">{{ err }}</p>
+                {% endfor %}
+
+                {# Reservamos 1.25rem (h-5) para este mensaje, así no "salta" el layout #}
+                <p id="matchMsg" class="h-5 mt-2 text-sm"></p>
+            </div>
         </div>
+
         <button type="submit"
             class="w-full py-3 bg-indigo-600 text-white rounded font-medium hover:bg-indigo-700 transition">
             Registrarme
         </button>
     </form>
-    <p class="text-center text-sm mt-6">
+
+    <p class="text-center text-sm text-gray-600 mt-6">
         ¿Ya tienes cuenta?
         <a href="{% url 'iniciar_sesion' %}" class="text-indigo-600 hover:underline">Inicia sesión</a>
     </p>
 </div>
+
+<script src="{% static 'js/registrarse.js' %}"></script>
 {% endblock %}

@@ -1,7 +1,105 @@
 {% extends 'base.html' %}
 {% block content %}
-<section>
-    <h1>This is UlloaWear v1</h1>
-    <h2>Hello there! Just wait a second</h2>
+
+{% if producto_random %}
+  <section class="bg-gray-100 py-8 -mx-4 lg:mx-0">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <!-- Imagen del producto -->
+        <div class="md:w-1/3 w-full relative">
+          {% if producto_random.imagenes %}
+            <img src="{{ producto_random.imagenes.url }}" alt="{{ producto_random.nombre }}"
+                 class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+          {% else %}
+            <div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 font-medium text-sm">
+              Sin imagen
+            </div>
+          {% endif %}
+          <!-- Overlay desvanecido derecho -->
+          <div class="absolute top-0 right-0 bottom-0 w-12 bg-gradient-to-l from-gray-50 to-transparent opacity-70"></div>
+        </div>
+
+        <!-- Información del producto -->
+        <div class="md:w-2/4 w-full space-y-4">
+          <span class="inline-block px-4 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-semibold uppercase tracking-wider">
+            Producto Destacado
+          </span>
+
+          <h2 class="text-2xl sm:text-3xl font-bold leading-tight text-gray-900">
+            {{ producto_random.nombre }}
+          </h2>
+
+          <p class="text-gray-600 text-sm leading-relaxed">
+            {{ producto_random.descripcion }}
+          </p>
+
+          <div class="mt-2">
+            <span class="text-xl font-semibold text-gray-900">
+              ${{ producto_random.precio }}
+            </span>
+          </div>
+
+          <div class="pt-2">
+            <a href="{{ producto_random.get_url }}"
+               class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all">
+              Ver detalles del producto
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+<!-- Listado de productos -->
+<section class="py-12 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-6">
+    <h1 class="text-2xl font-bold text-gray-800 mb-4">Todos nuestros productos</h1>
+
+    {% if productos %}
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {% for producto in productos %}
+          {% include 'productos/producto_card.html' %}
+        {% endfor %}
+      </div>
+
+      <!-- Paginación -->
+      <div class="flex justify-center mt-8">
+        <nav class="inline-flex rounded-md shadow-sm">
+          {% if productos.has_previous %}
+            <a href="?page={{ productos.previous_page_number }}" class="px-3 py-2 rounded-l-md bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+              Anterior
+            </a>
+          {% else %}
+            <span class="px-3 py-2 rounded-l-md bg-gray-100 text-sm font-medium text-gray-300 cursor-not-allowed">
+              Anterior
+            </span>
+          {% endif %}
+
+          {% for i in productos.paginator.page_range %}
+            <a href="?page={{ i }}"
+               class="px-3 py-2 border-t border-b border-gray-200 text-sm font-medium
+                      {% if productos.number == i %}bg-indigo-600 text-white{% else %}bg-white text-gray-500 hover:bg-gray-50{% endif %}">
+              {{ i }}
+            </a>
+          {% endfor %}
+
+          {% if productos.has_next %}
+            <a href="?page={{ productos.next_page_number }}" class="px-3 py-2 rounded-r-md bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+              Siguiente
+            </a>
+          {% else %}
+            <span class="px-3 py-2 rounded-r-md bg-gray-100 text-sm font-medium text-gray-300 cursor-not-allowed">
+              Siguiente
+            </span>
+          {% endif %}
+        </nav>
+      </div>
+
+    {% else %}
+      <p class="text-gray-500 italic">No hay productos disponibles.</p>
+    {% endif %}
+  </div>
 </section>
+
 {% endblock %}

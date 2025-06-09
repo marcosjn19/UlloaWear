@@ -18,17 +18,29 @@
         {% endif %}
 
         <div class="space-y-4">
+            <!-- Email igual -->
             <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-                <input id="email" name="email" type="email" required
-                    class="mt-1 w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    placeholder="tu@correo.com">
+                <label for="email" class="block text-sm font-medium text-gray-700">
+                    Correo electrónico
+                </label>
+                <input id="email" name="email" type="email" required placeholder="tu@correo.com"
+                    class="mt-1 w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
             </div>
+
+            <!-- Contraseña con botón overlay -->
             <div>
-                <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
-                <input id="password" name="password" type="password" required
-                    class="mt-1 w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    placeholder="••••••••">
+                <label for="password" class="block text-sm font-medium text-gray-700">
+                    Contraseña
+                </label>
+                <div class="relative mt-1">
+                    <input id="password" name="password" type="password" required placeholder="••••••••"
+                        class="w-full border rounded px-3 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                    <button type="button" id="togglePassword"
+                        class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-500 hover:text-gray-700">
+                        <svg data-feather="eye" class="toggle-open h-5 w-5"></svg>
+                        <svg data-feather="eye-off" class="toggle-close hidden h-5 w-5"></svg>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -64,5 +76,7 @@
         ¿Aún no tienes cuenta?
         <a href="{% url 'registrarse' %}" class="text-indigo-600 hover:underline">Crear cuenta</a>
     </p>
+
+    <script src="{% static 'js/login.js' %}"></script>
 </div>
 {% endblock %}

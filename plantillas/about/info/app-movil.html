@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% block title %}App móvil – UlloaWear{% endblock %}
+
+{% block content %}
+<div class="bg-gray-50 min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-6">UlloaWear App</h1>
+                    <p class="text-xl text-indigo-100 leading-relaxed">
+                        Ofertas exclusivas, seguimiento de pedidos y novedades en la palma de tu mano.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                        <a href="#" class="inline-flex items-center justify-center px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+                            App Store
+                        </a>
+                        <a href="#" class="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                            Google Play
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-6xl mx-auto py-16 px-4">
+
+        <!-- Ventajas de la App -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Por qué Descargarla?</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="tag" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Ofertas Exclusivas</h3>
+                    <p class="text-gray-600">Promociones solo disponibles en la app.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="bell" class="w-8 h-8 text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Notificaciones al Instante</h3>
+                    <p class="text-gray-600">Entérate de nuevos lanzamientos y descuentos en tiempo real.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="package" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seguimiento de Pedidos</h3>
+                    <p class="text-gray-600">Revisa el estado de tu compra en cualquier momento.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo Funciona -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Hazlo en Tres Pasos</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-orange-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Descarga</h3>
+                    <p class="text-gray-600">Elige tu tienda y obtén la app gratis.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Accede</h3>
+                    <p class="text-gray-600">Inicia sesión o crea tu cuenta en segundos.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-green-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Disfruta</h3>
+                    <p class="text-gray-600">Explora, compra y recibe recomendaciones personalizadas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios Adicionales -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Más que una Tienda</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </header>
+
+            <div class="space-y-4 max-w-2xl mx-auto">
+                <div class="flex items-start space-x-3">
+                    <i data-feather="gift" class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0"></i>
+                    <p class="text-gray-700">Obtén recompensas y cupones personalizados.</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <i data-feather="map-pin" class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0"></i>
+                    <p class="text-gray-700">Encuentra puntos de recolección cercanos.</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <i data-feather="users" class="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0"></i>
+                    <p class="text-gray-700">Accede a una comunidad que comparte tips de moda sostenible.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Preguntas Frecuentes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿La app es gratuita?</h3>
+                    <p class="text-gray-600 mb-4">Sí, descargar y usar la app no tiene costo.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿En qué dispositivos está disponible?</h3>
+                    <p class="text-gray-600 mb-4">iOS 13 o superior y Android 8.0 o superior.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Cómo activo las notificaciones?</h3>
+                    <p class="text-gray-600 mb-4">Permite notificaciones al instalar o desde ajustes de la app.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Mis datos están seguros?</h3>
+                    <p class="text-gray-600 mb-4">Ciframos tu información y no la compartimos con terceros sin consentimiento.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="bg-indigo-700 rounded-2xl p-8 text-white text-center">
+            <h2 class="text-2xl font-bold mb-4">Lleva UlloaWear a Donde Vayas</h2>
+            <p class="text-indigo-100 mb-6">Descarga la app y vive la experiencia completa.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#" class="inline-flex items-center justify-center px-6 py-3 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    App Store
+                </a>
+                <a href="" class="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                    Google Play
+                </a>
+            </div>
+        </section>
+    </main>
+</div>
+{% endblock %}

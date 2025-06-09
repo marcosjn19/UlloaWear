@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Nuestra Historia – UlloaWear{% endblock %}
+{% block content %}
+<div class="bg-gray-50 min-h-screen">
+    <!-- Hero Section con Imagen -->
+    <div class="relative bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-6">Nuestra Historia</h1>
+                    <p class="text-xl text-indigo-100 leading-relaxed">
+                        Descubre cómo comenzó nuestro viaje para crear moda consciente, accesible y sostenible desde el corazón de México.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="max-w-6xl mx-auto py-16 px-4">
+        <!-- Historia Principal -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">El Inicio de UlloaWear</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="prose prose-lg mx-auto text-gray-700">
+                <p class="text-xl text-gray-600 mb-6 text-center">
+                    UlloaWear nació en 2025 con la visión de crear moda consciente, accesible y sostenible desde Torreón, México.
+                </p>
+                
+                <p class="leading-relaxed mb-6">
+                    Todo comenzó con una idea simple pero poderosa: la moda no tiene que comprometer la calidad, el estilo o la conciencia ambiental. Empezamos en Torreón, diseñando colecciones que combinan estilo y comodidad, siempre pensando en el impacto que nuestras decisiones tienen en el mundo.
+                </p>
+                
+                <p class="leading-relaxed mb-6">
+                    Desde nuestros primeros diseños, nos enfocamos en crear prendas que no solo se vieran bien, sino que también se sintieran bien y fueran hechas de manera responsable. Cada pieza cuenta una historia de dedicación, creatividad y respeto por quienes las usan.
+                </p>
+                
+                <p class="leading-relaxed">
+                    Hoy llegamos a todo el país con miles de clientes satisfechos que comparten nuestra visión de una moda más consciente y accesible para todos.
+                </p>
+            </div>
+        </div>
+
+        <!-- Valores y Misión -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="text-center mb-6">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Nuestra Misión</h2>
+                </div>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Crear moda que inspire confianza y comodidad, mientras construimos un futuro más sostenible para la industria textil. Cada prenda que diseñamos refleja nuestro compromiso con la calidad, la innovación y el respeto por nuestro planeta.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="text-center mb-6">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Nuestra Visión</h2>
+                </div>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Ser la marca de moda mexicana líder en sostenibilidad y accesibilidad, inspirando a una nueva generación de consumidores conscientes que valoran tanto el estilo como el impacto positivo en su comunidad y medio ambiente.
+                </p>
+            </div>
+        </div>
+
+        <!-- Nuestros Valores -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestros Valores</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Sostenibilidad</h3>
+                    <p class="text-gray-600">Compromiso con prácticas responsables que cuiden nuestro planeta para las futuras generaciones.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Innovación</h3>
+                    <p class="text-gray-600">Constante búsqueda de nuevas formas de crear moda que combine estilo, comodidad y conciencia.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Comunidad</h3>
+                    <p class="text-gray-600">Construcción de relaciones auténticas con nuestros clientes y apoyo a la comunidad local.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logros y Números -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestro Impacto</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-indigo-600 mb-2">2025</div>
+                    <p class="text-gray-600">Año de fundación</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-indigo-600 mb-2">5,000+</div>
+                    <p class="text-gray-600">Clientes satisfechos</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-indigo-600 mb-2">32</div>
+                    <p class="text-gray-600">Estados con entregas</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-indigo-600 mb-2">100%</div>
+                    <p class="text-gray-600">Materiales sostenibles</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="bg-indigo-700 rounded-2xl p-8 text-white text-center">
+            <h2 class="text-2xl font-bold mb-4">Únete a Nuestra Historia</h2>
+            <p class="text-indigo-100 mb-6">Forma parte de la comunidad UlloaWear y descubre moda consciente que marca la diferencia.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="{% url 'inicio' %}" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Ver Colección
+                </a>
+                <a href="mailto:soporte@ulloawear.com" class="bg-indigo-600 bg-opacity-50 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-70 transition-colors">
+                    Contáctanos
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

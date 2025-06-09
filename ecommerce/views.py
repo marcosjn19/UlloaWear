@@ -2,11 +2,39 @@ from django.shortcuts import render, get_object_or_404, redirect
 from productos.models import Producto, Resena, Categoria
 from django.contrib import messages
 from PIL import Image  # Para validar que sea una imagen
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import random
 
 # Create your views here.
-def home ( request ):
-    return render(request, 'inicio.html')
+def home(request):
+    # Cargamos todas las categorías raíz con prefetch de subcategorías
+    categorias_raiz = Categoria.objects.prefetch_related('subcategorias').filter(padre=None)
+    
+    # Cargamos todos los productos
+    productos_list = Producto.objects.all().select_related('categoria')
+
+    # Seleccionar un producto aleatorio
+    try:
+        producto_random = random.choice(productos_list)
+    except IndexError:
+        producto_random = None
+
+    # Paginado: 12 productos por página
+    paginator = Paginator(productos_list, 12)
+    page_number = request.GET.get('page')
+    
+    try:
+        productos = paginator.page(page_number)
+    except PageNotAnInteger:
+        productos = paginator.page(1)
+    except EmptyPage:
+        productos = paginator.page(paginator.num_pages)
+
+    return render(request, 'inicio.html', {
+        'categorias_menu': categorias_raiz,
+        'productos': productos,
+        'producto_random': producto_random,
+    })
 
 def detalles_producto(request, pk):
     producto = Producto.objects.get(pk=pk)
