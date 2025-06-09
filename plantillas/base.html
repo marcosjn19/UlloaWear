@@ -1,5 +1,4 @@
 {% load static %}
-{% load categorias_menu %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -136,9 +135,10 @@
             </div>
         </div>
 
-        <!-- Menú de categorías -->
-        <nav class="bg-indigo-700 text-white text-sm shadow-inner overflow-x-auto">
-            <ul class="max-w-7xl mx-auto flex whitespace-nowrap">
+        <!-- Menú de categorías (omfg) -->
+        {% load categorias_menu %}
+        <nav class="bg-indigo-900 text-white text-sm shadow-md">
+            <ul class="flex justify-center space-x-6 px-4 py-3">
                 {% for categoria in categorias_menu %}
                     {% render_categoria categoria %}
                 {% endfor %}
