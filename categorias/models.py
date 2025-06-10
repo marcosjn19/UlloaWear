@@ -21,3 +21,9 @@ class Categoria(models.Model):
     
     def get_absolute_url(self):
         return reverse('categoria', kwargs={'pk': self.pk})
+    
+    def obtener_todas_las_hijas(self):
+        hijas = list(self.subcategorias.all())
+        for sub in self.subcategorias.all():
+            hijas += sub.obtener_todas_las_hijas()
+        return hijas

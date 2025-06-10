@@ -83,7 +83,12 @@ def detalles_producto(request, pk):
 def categoria(request, pk):
     categoria = get_object_or_404(Categoria, pk=pk)
     subcategorias = categoria.subcategorias.all()
-    productos = Producto.objects.filter(categoria=categoria)
+
+    # Obtener todas las categorías hijas recursivamente
+    categorias_incluidas = [categoria] + categoria.obtener_todas_las_hijas()
+
+    # Mostrar todos los productos que pertenezcan a la categoría o cualquier hija
+    productos = Producto.objects.filter(categoria__in=categorias_incluidas)
 
     return render(request, 'categorias/categoria.html', {
         'categoria': categoria,
