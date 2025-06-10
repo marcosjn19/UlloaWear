@@ -7,3 +7,27 @@
     color: #FBBF24;
     /* amarillo */
 }
+
+.nivel-1,
+.nivel-2,
+.nivel-3,
+.nivel-4,
+.nivel-5 {
+  display: none;
+  background-color: #fff !important;
+  z-index: 50;
+}
+
+.grupo:hover > .nivel-1,
+.grupo-sub:hover > .nivel-2,
+.grupo-sub:hover > .nivel-3,
+.grupo-sub:hover > .nivel-4,
+.grupo-sub:hover > .nivel-5 {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #e5e7eb;
+}

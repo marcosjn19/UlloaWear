@@ -1,33 +1,25 @@
 {% load categorias_menu %}
-<li class="relative group">
+
+{% with nivel=nivel|default:1 %}
+
+<div class="relative {% if nivel == 1 %}grupo{% else %}grupo-sub{% endif %}">
+  <!-- Enlace visible del nivel actual -->
   <a href="{{ categoria.get_absolute_url }}"
-     class="block py-2 px-4 hover:bg-indigo-800 whitespace-nowrap font-medium text-sm text-white">
+     class="inline-block px-4 py-2 whitespace-nowrap font-medium 
+            {% if nivel == 1 %}text-white{% else %}text-gray-800{% endif %}
+            hover:bg-indigo-700 hover:text-white transition-colors duration-200 rounded">
     {{ categoria.nombre }}
   </a>
 
-  {% if categoria.subcategorias.all %}
-    <ul class="absolute top-full left-0 mt-0 bg-white text-gray-800 shadow-lg group-hover:block group-focus-within:block z-20 min-w-[220px] hidden">
-      {% for subcat in categoria.subcategorias.all %}
-        <li class="group relative">
-          <a href="{{ subcat.get_absolute_url }}"
-             class="block py-2 pl-6 pr-4 hover:bg-gray-100 text-sm text-gray-800 whitespace-nowrap">
-            {{ subcat.nombre }}
-          </a>
-
-          {% if subcat.subcategorias.all %}
-            <ul class="absolute top-0 left-full mt-0 bg-white text-gray-800 shadow-lg z-20 hidden group-hover:block group-focus-within:block min-w-[200px]">
-              {% for subsub in subcat.subcategorias.all %}
-                <li>
-                  <a href="{{ subsub.get_absolute_url }}"
-                     class="block py-2 pl-8 pr-4 hover:bg-gray-100 text-sm text-gray-800 whitespace-nowrap">
-                    {{ subsub.nombre }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
+  {% if categoria.subcategorias.exists %}
+    <div class="nivel-{{ nivel }} absolute top-full left-0 w-full z-50 bg-white shadow-lg border-t border-gray-200 hidden">
+      <div class="flex flex-col space-y-2 p-4 min-w-[200px]">
+        {% for subcat in categoria.subcategorias.all %}
+          {% include "categorias/menu_item.html" with categoria=subcat nivel=nivel|add:'1' %}
+        {% endfor %}
+      </div>
+    </div>
   {% endif %}
-</li>
+</div>
+
+{% endwith %}
