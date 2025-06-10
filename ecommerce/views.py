@@ -43,7 +43,7 @@ def detalles_producto(request, pk):
     if request.method == 'POST':
         if not request.user.is_authenticated:
             messages.warning(request, "Debes iniciar sesión para dejar una reseña.")
-            return redirect('detalles_producto', pk=pk)
+            return redirect('detalle_producto', pk=pk)
         imagen = request.FILES.get('imagen')  # Recibir archivo opcional
 
         # Validar que la imagen sea realmente una imagen
@@ -53,7 +53,7 @@ def detalles_producto(request, pk):
                 img.verify()  # Verifica que sea una imagen válida
             except Exception:
                 messages.error(request, "El archivo seleccionado no es una imagen válida.")
-                return redirect('detalles_producto', pk=pk)
+                return redirect('detalle_producto', pk=pk)
             
         calificacion = int(request.POST.get('calificacion'))
         titulo = request.POST.get('titulo')
