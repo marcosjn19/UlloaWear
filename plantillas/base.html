@@ -137,13 +137,13 @@
 
         <!-- Menú de categorías (omfg) -->
         {% load categorias_menu %}
-        <nav class="bg-indigo-900 text-white text-sm shadow-md">
-            <ul class="flex justify-center space-x-6 px-4 py-3">
-                {% for categoria in categorias_menu %}
-                    {% render_categoria categoria %}
-                {% endfor %}
-            </ul>
-        </nav>
+<nav class="bg-indigo-900 text-white text-sm shadow-md relative z-50">
+  <div class="flex flex-row space-x-4 px-4 py-3 relative">
+    {% for categoria in categorias_menu %}
+      {% include "categorias/menu_item.html" with categoria=categoria %}
+    {% endfor %}
+  </div>
+</nav>
     </header>
 
     <!-- Contenido -->
