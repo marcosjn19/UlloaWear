@@ -3,10 +3,15 @@ from categorias.models import Categoria
 from cuentas.models import Cuenta
 from django.urls import reverse
 from django.db.models import Avg, Count
-
+import uuid
 # Create your models here.
 
 class Producto ( models.Model ):
+    uuid        = models.UUIDField(
+                    default      = uuid.uuid4,
+                    editable     = False,
+                    unique       = True
+                )
     nombre      = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(max_length=500, blank=True)
     precio      = models.FloatField()
@@ -15,7 +20,7 @@ class Producto ( models.Model ):
     categoria   = models.ForeignKey(Categoria, null=True, on_delete=models.SET_NULL)
 
     def get_url ( self ):
-        return reverse ( 'detalle_producto', args=[self.pk])
+        return reverse ( 'detalle_producto', args=[str(self.uuid)])
     
     def __str__(self):
         return self.nombre

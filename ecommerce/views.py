@@ -36,14 +36,16 @@ def home(request):
         'producto_random': producto_random,
     })
 
-def detalles_producto(request, pk):
-    producto = Producto.objects.get(pk=pk)
+
+def detalles_producto(request, uuid):
+    producto = Producto.objects.get(uuid=uuid)
     reviews = Resena.objects.filter(producto=producto)
 
     if request.method == 'POST':
         if not request.user.is_authenticated:
             messages.warning(request, "Debes iniciar sesión para dejar una reseña.")
-            return redirect('detalle_producto', pk=pk)
+            return redirect('detalle_producto', uuid=uuid)
+
         imagen = request.FILES.get('imagen')  # Recibir archivo opcional
 
         # Validar que la imagen sea realmente una imagen
@@ -53,13 +55,12 @@ def detalles_producto(request, pk):
                 img.verify()  # Verifica que sea una imagen válida
             except Exception:
                 messages.error(request, "El archivo seleccionado no es una imagen válida.")
-                return redirect('detalle_producto', pk=pk)
-            
+                return redirect('detalle_producto', uuid=uuid)
+
         calificacion = int(request.POST.get('calificacion'))
         titulo = request.POST.get('titulo')
         resena = request.POST.get('resena', '')
 
-        
         nueva_resena = Resena.objects.create(
             producto=producto,
             user=request.user,
@@ -71,17 +72,17 @@ def detalles_producto(request, pk):
         nueva_resena.save()
 
         messages.success(request, "Gracias por tu reseña.")
-        return redirect('detalle_producto', pk=pk)
+        return redirect('detalle_producto', uuid=uuid)
 
     context = {
-        'producto' : producto,
-        'reviews'  : reviews,
-        'rango_5'  : range(1, 6),
+        'producto': producto,
+        'reviews': reviews,
+        'rango_5': range(1, 6),
     }
     return render(request, 'productos/detalle.html', context)
 
-def categoria(request, pk):
-    categoria = get_object_or_404(Categoria, pk=pk)
+def categoria(request, uuid):
+    categoria = get_object_or_404(Categoria, uuid=uuid)
     subcategorias = categoria.subcategorias.all()
 
     # Obtener todas las categorías hijas recursivamente
